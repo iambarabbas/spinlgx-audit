@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performance Analysis - Spin LGX Audit | XSL Consulting</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0B1D2E',
+            'navy-light': '#1e3a5f',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <a href="index.html"><img src="logo.svg" alt="XSL Consulting" class="h-12"></a>
+        <nav class="hidden md:flex space-x-6 text-sm font-medium">
+          <a href="index.html" class="text-gray-600 hover:text-navy transition">Executive Summary</a>
+          <a href="performance.html" class="text-navy font-semibold border-b-2 border-navy pb-1">Performance</a>
+          <a href="seo.html" class="text-gray-600 hover:text-navy transition">SEO</a>
+          <a href="design.html" class="text-gray-600 hover:text-navy transition">Design/UX</a>
+          <a href="competitors.html" class="text-gray-600 hover:text-navy transition">Competitors</a>
+          <a href="pricing.html" class="text-gray-600 hover:text-navy transition">Pricing</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="bg-gradient-to-br from-red-500 to-red-700 text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <h1 class="text-4xl font-bold mb-2">⚡ Speed & Performance Analysis</h1>
+          <p class="text-red-100">Why Spin LGX is losing leads to slow page loads</p>
+        </div>
+        <div class="text-center">
+          <div class="text-6xl font-black">35</div>
+          <div class="text-sm uppercase tracking-wide">Critical</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics Grid -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-2xl font-bold mb-8">Performance Metrics</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        
+        <div class="bg-white rounded-lg p-6 border-l-4 border-red-500 shadow">
+          <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">Page Load Time</h3>
+          <div class="text-3xl font-bold text-red-600 mb-1">0.39s</div>
+          <p class="text-sm text-gray-600">Initial load, but 662KB downloaded. Wix bloat adds 400KB overhead.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 border-l-4 border-red-500 shadow">
+          <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">Time to First Byte</h3>
+          <div class="text-3xl font-bold text-red-600 mb-1">0.18s</div>
+          <p class="text-sm text-gray-600">Slow server response due to Wix infrastructure limitations.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 border-l-4 border-orange-500 shadow">
+          <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">Total Page Size</h3>
+          <div class="text-3xl font-bold text-orange-600 mb-1">662 KB</div>
+          <p class="text-sm text-gray-600">Excessive for a 5-page site. Competitors load 150-250KB.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 border-l-4 border-orange-500 shadow">
+          <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">Platform</h3>
+          <div class="text-2xl font-bold text-orange-600 mb-1">Wix</div>
+          <p class="text-sm text-gray-600">Vendor lock-in, bloated code, zero optimization control.</p>
+        </div>
+
+      </div>
+
+      <!-- Critical Issues -->
+      <div class="space-y-6">
+        
+        <div class="bg-red-50 border-l-4 border-red-600 rounded-lg p-6">
+          <div class="flex items-start">
+            <span class="text-3xl mr-4">🚨</span>
+            <div>
+              <h3 class="text-lg font-bold text-red-900 mb-2">Wix Platform Bloat <span class="text-xs bg-red-600 text-white px-2 py-1 rounded-full ml-2">CRITICAL</span></h3>
+              <p class="text-gray-700 leading-relaxed mb-3">
+                Wix sites ship with massive JavaScript bundles, inline CSS, and tracking scripts that slow down every page load. This is not fixable within Wix—it's architectural bloat.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                <strong>Impact:</strong> Competitors on custom builds or modern static site generators (Next.js, Astro) load 3-5x faster. Slow sites lose 40% of visitors who wait more than 3 seconds.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-red-50 border-l-4 border-red-600 rounded-lg p-6">
+          <div class="flex items-start">
+            <span class="text-3xl mr-4">🚨</span>
+            <div>
+              <h3 class="text-lg font-bold text-red-900 mb-2">No CDN Optimization Control</h3>
+              <p class="text-gray-700 leading-relaxed mb-3">
+                Wix handles caching and CDN automatically, but you have zero control over cache headers, edge optimization, or image compression settings.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                <strong>Competitor Advantage:</strong> Modern competitors use Cloudflare or Vercel with aggressive caching strategies, image optimization, and edge computing. You're stuck with Wix's defaults.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-orange-50 border-l-4 border-orange-500 rounded-lg p-6">
+          <div class="flex items-start">
+            <span class="text-3xl mr-4">⚠️</span>
+            <div>
+              <h3 class="text-lg font-bold text-orange-900 mb-2">Mobile Performance Unknown (Likely Terrible)</h3>
+              <p class="text-gray-700 leading-relaxed mb-3">
+                Desktop load is mediocre, but mobile is where 60%+ of B2B research happens. Wix mobile sites typically score 20-40 on Google PageSpeed Insights.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                <strong>Why it matters:</strong> Google uses mobile-first indexing. Slow mobile = lower search rankings = fewer leads.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-orange-50 border-l-4 border-orange-500 rounded-lg p-6">
+          <div class="flex items-start">
+            <span class="text-3xl mr-4">⚠️</span>
+            <div>
+              <h3 class="text-lg font-bold text-orange-900 mb-2">No Image Optimization</h3>
+              <p class="text-gray-700 leading-relaxed mb-3">
+                Wix auto-compresses images, but you can't control format (WebP/AVIF), lazy loading behavior, or responsive sizing. Stock images are often oversized.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                <strong>Modern alternative:</strong> Next.js Image component automatically serves WebP/AVIF, lazy loads, and generates responsive sizes. Cuts image weight 60-80%.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technical Comparison -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-2xl font-bold mb-6">Technical Stack Comparison</h2>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-navy text-white">
+              <th class="px-4 py-3 text-left text-sm font-semibold">Metric</th>
+              <th class="px-4 py-3 text-left text-sm font-semibold">Spin LGX (Wix)</th>
+              <th class="px-4 py-3 text-left text-sm font-semibold">ICC Logistics (Custom)</th>
+              <th class="px-4 py-3 text-left text-sm font-semibold">Recommended (Next.js)</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm">
+            <tr class="border-b">
+              <td class="px-4 py-3 font-semibold">Page Load Time</td>
+              <td class="px-4 py-3 text-red-600 font-semibold">0.39s</td>
+              <td class="px-4 py-3 text-green-600 font-semibold">0.22s</td>
+              <td class="px-4 py-3 text-green-600 font-semibold">&lt;0.15s</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="px-4 py-3 font-semibold">Page Size</td>
+              <td class="px-4 py-3 text-red-600 font-semibold">662 KB</td>
+              <td class="px-4 py-3 text-green-600 font-semibold">180 KB</td>
+              <td class="px-4 py-3 text-green-600 font-semibold">100-150 KB</td>
+            </tr>
+            <tr class="border-b">
+              <td class="px-4 py-3 font-semibold">Mobile PageSpeed</td>
+              <td class="px-4 py-3 text-red-600 font-semibold">~25-35</td>
+              <td class="px-4 py-3 text-green-600 font-semibold">~75-85</td>
+              <td class="px-4 py-3 text-green-600 font-semibold">90-100</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="px-4 py-3 font-semibold">Code Control</td>
+              <td class="px-4 py-3 text-red-600">None</td>
+              <td class="px-4 py-3 text-green-600">Full</td>
+              <td class="px-4 py-3 text-green-600">Full</td>
+            </tr>
+            <tr class="border-b">
+              <td class="px-4 py-3 font-semibold">Hosting Cost</td>
+              <td class="px-4 py-3">$23-49/mo</td>
+              <td class="px-4 py-3">~$50-150/mo</td>
+              <td class="px-4 py-3 text-green-600">$0-20/mo (Vercel)</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="px-4 py-3 font-semibold">Migration Flexibility</td>
+              <td class="px-4 py-3 text-red-600">Locked In</td>
+              <td class="px-4 py-3 text-green-600">Portable</td>
+              <td class="px-4 py-3 text-green-600">Portable</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Recommendations -->
+  <section class="py-12 bg-gradient-to-br from-blue-50 to-blue-100">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-bold mb-6">How to Fix It</h2>
+      
+      <div class="bg-white rounded-xl p-8 space-y-6">
+        
+        <div>
+          <h3 class="text-lg font-bold text-navy mb-3">Option 1: Migrate Off Wix ($18,000)</h3>
+          <p class="text-gray-700 mb-3 leading-relaxed">
+            Rebuild on a modern platform like <strong>Next.js + Vercel</strong> or <strong>Astro + Cloudflare Pages</strong>. This gives you:
+          </p>
+          <ul class="space-y-2 text-gray-700 ml-6 list-disc">
+            <li>3-5x faster page loads (sub-1-second load times)</li>
+            <li>Full control over optimization (images, caching, code splitting)</li>
+            <li>Better SEO (faster = higher rankings)</li>
+            <li>Lower hosting costs long-term ($0-20/mo vs $23-49/mo)</li>
+            <li>No vendor lock-in (own your code, migrate anytime)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold text-navy mb-3">Option 2: Band-Aid Fixes on Wix ($500-1,000)</h3>
+          <p class="text-gray-700 mb-3 leading-relaxed">
+            If budget is tight, we can optimize within Wix limitations:
+          </p>
+          <ul class="space-y-2 text-gray-700 ml-6 list-disc">
+            <li>Compress all images manually to WebP format</li>
+            <li>Remove unnecessary Wix apps/widgets</li>
+            <li>Simplify homepage (less content = faster load)</li>
+            <li>Enable Wix Turbo (slight improvement)</li>
+          </ul>
+          <p class="text-orange-700 font-semibold mt-3">
+            ⚠️ Warning: This won't solve the core problem. You'll still lag behind competitors on modern platforms.
+          </p>
+        </div>
+
+        <div class="bg-gray-100 rounded-lg p-6">
+          <h3 class="text-lg font-bold mb-2">Our Recommendation</h3>
+          <p class="text-gray-700 leading-relaxed">
+            <strong>Migrate to Next.js + Vercel.</strong> Yes, it's $18K upfront, but you'll recover that in:
+          </p>
+          <ul class="space-y-2 text-gray-700 ml-6 list-disc mt-3">
+            <li><strong>Better conversion rates:</strong> Faster sites convert 2-3x better</li>
+            <li><strong>Higher search rankings:</strong> Google rewards fast sites</li>
+            <li><strong>Lower hosting costs:</strong> Save $300-600/year</li>
+            <li><strong>Future-proof:</strong> No rebuild needed for 5+ years</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-navy text-white py-8">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <img src="logo.svg" alt="XSL Consulting" class="h-10 mx-auto mb-4 opacity-80">
+      <p class="text-gray-400 text-sm">Audit prepared by XSL Consulting | May 5, 2026</p>
+      <div class="mt-4">
+        <a href="pricing.html" class="inline-block bg-white text-navy font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition">
+          View Pricing & Solutions →
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

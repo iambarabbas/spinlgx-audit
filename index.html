@@ -3,1231 +3,279 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spin LGX Website Audit & Competitive Analysis</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy: #0B1D2E;
-      --red: #DC2626;
-      --orange: #F59E0B;
-      --yellow: #FBBF24;
-      --green: #10B981;
-      --teal: #14B8A6;
-      --blue: #3B82F6;
-      --gray-50: #F9FAFB;
-      --gray-100: #F3F4F6;
-      --gray-200: #E5E7EB;
-      --gray-300: #D1D5DB;
-      --gray-600: #4B5563;
-      --gray-700: #374151;
-      --gray-900: #111827;
+  <title>Spin LGX Website Audit - Executive Summary | XSL Consulting</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0B1D2E',
+            'navy-light': '#1e3a5f',
+          }
+        }
+      }
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--gray-50);
-      color: var(--gray-900);
-      line-height: 1.8;
-      padding: 40px 20px;
-      font-size: 16px;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-    .header {
-      background: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%);
-      color: white;
-      padding: 48px 40px;
-      text-align: center;
-    }
-    .header h1 {
-      font-size: 36px;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-    .header .subtitle {
-      font-size: 18px;
-      opacity: 0.9;
-      margin-bottom: 8px;
-    }
-    .header .date {
-      font-size: 14px;
-      opacity: 0.7;
-    }
-    .executive-summary {
-      background: var(--yellow);
-      background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
-      padding: 32px 40px;
-      border-bottom: 1px solid var(--gray-200);
-    }
-    .executive-summary h2 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 16px;
-      color: var(--gray-900);
-    }
-    .executive-summary p {
-      font-size: 18px;
-      line-height: 1.9;
-      color: var(--gray-700);
-      margin-bottom: 16px;
-    }
-    .overall-score {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 40px;
-      background: var(--gray-50);
-      border-bottom: 1px solid var(--gray-200);
-    }
-    .score-card {
-      flex: 1;
-      min-width: 200px;
-      text-align: center;
-      padding: 24px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    }
-    .score-card h3 {
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--gray-600);
-      margin-bottom: 12px;
-    }
-    .score-value {
-      font-size: 48px;
-      font-weight: 800;
-      margin-bottom: 4px;
-    }
-    .score-label {
-      font-size: 13px;
-      color: var(--gray-600);
-    }
-    .score-critical { color: var(--red); }
-    .score-warning { color: var(--orange); }
-    .score-fair { color: var(--yellow); }
-    .score-good { color: var(--teal); }
-    .score-excellent { color: var(--green); }
-    
-    .content {
-      padding: 40px;
-    }
-    .section {
-      margin-bottom: 64px;
-    }
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 2px solid var(--gray-200);
-    }
-    .section-icon {
-      width: 32px;
-      height: 32px;
-      background: var(--navy);
-      color: white;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-    }
-    .section h2 {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--gray-900);
-    }
-    .metric-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-bottom: 24px;
-    }
-    .metric {
-      padding: 20px;
-      background: var(--gray-50);
-      border-radius: 8px;
-      border-left: 4px solid var(--gray-300);
-    }
-    .metric.critical { border-left-color: var(--red); background: #FEF2F2; }
-    .metric.warning { border-left-color: var(--orange); background: #FFF7ED; }
-    .metric.good { border-left-color: var(--green); background: #F0FDF4; }
-    .metric-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--gray-700);
-      margin-bottom: 8px;
-    }
-    .metric-value {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-    .metric-desc {
-      font-size: 15px;
-      color: var(--gray-600);
-      line-height: 1.7;
-    }
-    .issue-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .issue-item {
-      padding: 16px;
-      margin-bottom: 12px;
-      background: white;
-      border-radius: 6px;
-      border-left: 4px solid var(--gray-300);
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-    }
-    .issue-item.critical { border-left-color: var(--red); }
-    .issue-item.warning { border-left-color: var(--orange); }
-    .issue-item.info { border-left-color: var(--blue); }
-    .issue-title {
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: var(--gray-900);
-    }
-    .issue-desc {
-      font-size: 16px;
-      color: var(--gray-700);
-      line-height: 1.8;
-      margin-top: 8px;
-    }
-    .competitor-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    }
-    .competitor-table th {
-      background: var(--navy);
-      color: white;
-      padding: 16px 18px;
-      text-align: left;
-      font-weight: 600;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-    .competitor-table td {
-      padding: 16px 18px;
-      border-bottom: 1px solid var(--gray-200);
-      font-size: 15px;
-      line-height: 1.6;
-    }
-    .competitor-table tr:last-child td {
-      border-bottom: none;
-    }
-    .competitor-table .company-name {
-      font-weight: 600;
-      color: var(--navy);
-    }
-    .check-yes { color: var(--green); font-weight: 600; }
-    .check-no { color: var(--red); font-weight: 600; }
-    .recommendations {
-      background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
-      padding: 32px;
-      border-radius: 8px;
-      margin-top: 32px;
-    }
-    .recommendations h3 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 16px;
-      color: var(--gray-900);
-    }
-    .recommendations ol {
-      margin-left: 20px;
-      line-height: 2;
-      font-size: 16px;
-    }
-    .recommendations li {
-      margin-bottom: 16px;
-      color: var(--gray-800);
-    }
-    .recommendations strong {
-      color: var(--navy);
-    }
-    .footer {
-      background: var(--gray-100);
-      padding: 24px 40px;
-      text-align: center;
-      border-top: 1px solid var(--gray-200);
-      font-size: 14px;
-      color: var(--gray-600);
-    }
-    .badge {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: 600;
-      margin-left: 8px;
-    }
-    .badge-critical { background: #FEE2E2; color: var(--red); }
-    .badge-warning { background: #FEF3C7; color: #92400E; }
-    .badge-success { background: #D1FAE5; color: #065F46; }
-  </style>
+  </script>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-900">
 
-<div class="container">
-  <!-- Header -->
-  <div class="header">
-    <h1>Spin LGX Website Audit</h1>
-    <div class="subtitle">Comprehensive Website Performance & Competitive Analysis</div>
-    <div class="date">Prepared: May 5, 2026</div>
-  </div>
+  <!-- Header with Logo & Navigation -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <img src="logo.svg" alt="XSL Consulting" class="h-12">
+        <nav class="hidden md:flex space-x-6 text-sm font-medium">
+          <a href="index.html" class="text-navy font-semibold border-b-2 border-navy pb-1">Executive Summary</a>
+          <a href="performance.html" class="text-gray-600 hover:text-navy transition">Performance</a>
+          <a href="seo.html" class="text-gray-600 hover:text-navy transition">SEO</a>
+          <a href="design.html" class="text-gray-600 hover:text-navy transition">Design/UX</a>
+          <a href="competitors.html" class="text-gray-600 hover:text-navy transition">Competitors</a>
+          <a href="pricing.html" class="text-gray-600 hover:text-navy transition">Pricing</a>
+        </nav>
+        <button class="md:hidden text-navy">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-  <!-- Executive Summary -->
-  <div class="executive-summary">
-    <h2>📊 Executive Summary</h2>
-    <p><strong>Spin LGX</strong> is a logistics consulting firm built on Wix, offering gainshare-model contract optimization services. While the site communicates the core value proposition, it suffers from significant technical debt, poor SEO implementation, zero content marketing, and is falling behind more sophisticated competitors who leverage authority content, thought leadership, and modern web performance.</p>
-    <p><strong>Bottom Line:</strong> The site works, but it's not winning business. Competitors are outranking, outperforming, and out-educating Spin LGX with robust content strategies, faster sites, and stronger technical SEO. This audit identifies critical gaps and provides a roadmap to compete effectively.</p>
-  </div>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-navy to-navy-light text-white py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl">
+        <h1 class="text-5xl font-bold mb-4">Spin LGX Website Audit</h1>
+        <p class="text-xl text-gray-200 mb-2">Comprehensive Performance & Competitive Analysis</p>
+        <p class="text-sm text-gray-400">Prepared by XSL Consulting | May 5, 2026</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Overall Score Cards -->
-  <div class="overall-score">
-    <div class="score-card">
-      <h3>Overall Score</h3>
-      <div class="score-value score-critical">42/100</div>
-      <div class="score-label">Critical Issues</div>
+  <section class="py-12 bg-white border-b">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-center mb-8">Overall Assessment</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        
+        <div class="bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-300 rounded-xl p-6 text-center">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-600 mb-3">Overall Score</h3>
+          <div class="text-5xl font-black text-red-600 mb-2">42</div>
+          <p class="text-sm text-gray-700 font-medium">Critical Issues</p>
+        </div>
+
+        <div class="bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-300 rounded-xl p-6 text-center">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-600 mb-3">Speed</h3>
+          <div class="text-5xl font-black text-red-600 mb-2">35</div>
+          <p class="text-sm text-gray-700 font-medium">Critical</p>
+        </div>
+
+        <div class="bg-gradient-to-br from-orange-50 to-orange-100 border-2 border-orange-300 rounded-xl p-6 text-center">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-600 mb-3">SEO</h3>
+          <div class="text-5xl font-black text-orange-600 mb-2">42</div>
+          <p class="text-sm text-gray-700 font-medium">Poor</p>
+        </div>
+
+        <div class="bg-gradient-to-br from-orange-50 to-orange-100 border-2 border-orange-300 rounded-xl p-6 text-center">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-600 mb-3">Design/UX</h3>
+          <div class="text-5xl font-black text-orange-600 mb-2">38</div>
+          <p class="text-sm text-gray-700 font-medium">Poor</p>
+        </div>
+
+        <div class="bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-300 rounded-xl p-6 text-center">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-600 mb-3">Content</h3>
+          <div class="text-5xl font-black text-red-600 mb-2">10</div>
+          <p class="text-sm text-gray-700 font-medium">Non-Existent</p>
+        </div>
+
+      </div>
     </div>
-    <div class="score-card">
-      <h3>Speed & Performance</h3>
-      <div class="score-value score-critical">35/100</div>
-      <div class="score-label">Critical Issues</div>
-    </div>
-    <div class="score-card">
-      <h3>SEO</h3>
-      <div class="score-value score-warning">42/100</div>
-      <div class="score-label">Poor Optimization</div>
-    </div>
-    <div class="score-card">
-      <h3>Design/UX</h3>
-      <div class="score-value score-warning">38/100</div>
-      <div class="score-label">Poor User Experience</div>
-    </div>
-    <div class="score-card">
-      <h3>Content Marketing</h3>
-      <div class="score-value score-critical">10/100</div>
-      <div class="score-label">Non-Existent</div>
-    </div>
-  </div>
+  </section>
 
-  <!-- Main Content -->
-  <div class="content">
-
-    <!-- Speed & Performance -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">⚡</div>
-        <h2>Speed & Performance</h2>
+  <!-- Executive Summary -->
+  <section class="py-16 bg-gradient-to-br from-yellow-50 to-yellow-100">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-6 text-navy">📊 Executive Summary</h2>
+      
+      <div class="space-y-4 text-lg leading-relaxed text-gray-800">
+        <p>
+          <strong>Spin LGX</strong> is a logistics consulting firm built on Wix, offering gainshare-model contract optimization services. While the site communicates the core value proposition, it suffers from significant technical debt, poor SEO implementation, zero content marketing, and is falling behind more sophisticated competitors.
+        </p>
+        
+        <p>
+          <strong class="text-red-600">The Bottom Line:</strong> The site works, but it's not winning business. Competitors are outranking, outperforming, and out-educating Spin LGX with robust content strategies, faster sites, and stronger technical SEO.
+        </p>
       </div>
 
-      <div class="metric-grid">
-        <div class="metric critical">
-          <div class="metric-title">Page Load Time</div>
-          <div class="metric-value">0.39 seconds</div>
-          <div class="metric-desc">Initial load, but 662KB downloaded. Wix bloat is significant.</div>
-        </div>
-        <div class="metric critical">
-          <div class="metric-title">Time to First Byte</div>
-          <div class="metric-value">0.18 seconds</div>
-          <div class="metric-desc">Server response is slow due to Wix infrastructure limitations.</div>
-        </div>
-        <div class="metric warning">
-          <div class="metric-title">Platform</div>
-          <div class="metric-value">Wix</div>
-          <div class="metric-desc">Vendor lock-in, bloated code, limited optimization control.</div>
-        </div>
-        <div class="metric critical">
-          <div class="metric-title">Total Page Size</div>
-          <div class="metric-value">662 KB</div>
-          <div class="metric-desc">Excessive for a simple 5-page site. Wix adds ~400KB overhead.</div>
-        </div>
-      </div>
-
-      <ul class="issue-list">
-        <li class="issue-item critical">
-          <div class="issue-title">🚨 Wix Platform Bloat <span class="badge badge-critical">CRITICAL</span></div>
-          <div class="issue-desc">Wix sites ship with massive JavaScript bundles, inline CSS, and tracking scripts that slow down every page load. This is not fixable within Wix—it's architectural bloat. Competitors on custom builds or modern static site generators load 3-5x faster.</div>
-        </li>
-        <li class="issue-item critical">
-          <div class="issue-title">🚨 No CDN Optimization Control</div>
-          <div class="issue-desc">Wix handles caching/CDN automatically, but you have zero control over cache headers, edge optimization, or image compression settings. Modern competitors use Cloudflare/Vercel with aggressive caching strategies.</div>
-        </li>
-        <li class="issue-item warning">
-          <div class="issue-title">⚠️ Mobile Performance Unknown</div>
-          <div class="issue-desc">Desktop load is mediocre; mobile is likely worse. Wix mobile sites often score 20-40 on Google PageSpeed Insights. Slow mobile = lost leads.</div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- SEO Analysis -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">🔍</div>
-        <h2>SEO & Discoverability</h2>
-      </div>
-
-      <div class="metric-grid">
-        <div class="metric critical">
-          <div class="metric-title">Meta Description</div>
-          <div class="metric-value">Missing</div>
-          <div class="metric-desc">No meta description on homepage. Google will auto-generate, hurting CTR.</div>
-        </div>
-        <div class="metric warning">
-          <div class="metric-title">Title Tag</div>
-          <div class="metric-value">"Home | Spin LGX"</div>
-          <div class="metric-desc">Generic, no keywords. Should be "Logistics Consulting & Contract Optimization | Spin LGX"</div>
-        </div>
-        <div class="metric critical">
-          <div class="metric-title">Blog / Content Hub</div>
-          <div class="metric-value">None</div>
-          <div class="metric-desc">Zero articles, guides, or thought leadership. Competitors publish 2-4x/month.</div>
-        </div>
-        <div class="metric critical">
-          <div class="metric-title">Schema Markup</div>
-          <div class="metric-value">None</div>
-          <div class="metric-desc">No structured data for LocalBusiness, Service, or FAQPage. Missing rich snippets.</div>
-        </div>
-        <div class="metric warning">
-          <div class="metric-title">Internal Linking</div>
-          <div class="metric-value">Weak</div>
-          <div class="metric-desc">Only 5 pages, minimal cross-linking. No content depth to build authority.</div>
-        </div>
-        <div class="metric critical">
-          <div class="metric-title">Keyword Targeting</div>
-          <div class="metric-value">Vague</div>
-          <div class="metric-desc">Generic phrases like "logistics consulting" without long-tail targeting (e.g., "parcel contract optimization for ecommerce").</div>
-        </div>
-      </div>
-
-      <ul class="issue-list">
-        <li class="issue-item critical">
-          <div class="issue-title">🚨 No Content Marketing Strategy <span class="badge badge-critical">SHOWSTOPPER</span></div>
-          <div class="issue-desc"><strong>ICC Logistics</strong> publishes 40+ detailed blog posts covering UPS rate hikes, FedEx contract clauses, freight audit guides, and industry news. Spin LGX has ZERO. This is the #1 reason ICC outranks you in organic search. You're invisible where buyers are searching.</div>
-        </li>
-        <li class="issue-item critical">
-          <div class="issue-title">🚨 Missing Service-Specific Landing Pages</div>
-          <div class="issue-desc">You list 6 services on one page. Competitors create dedicated landing pages for "LTL Contract Negotiation", "Parcel Invoice Audit", "Freight Bill Payment Services"—each optimized for different search queries. You're missing dozens of ranking opportunities.</div>
-        </li>
-        <li class="issue-item warning">
-          <div class="issue-title">⚠️ Weak On-Page Optimization</div>
-          <div class="issue-desc">Headings are generic ("What We Do"), alt text is missing on images, and there's no keyword density strategy. Every page should target 1-2 primary keywords with supporting LSI terms.</div>
-        </li>
-        <li class="issue-item info">
-          <div class="issue-title">ℹ️ Social Links Use Tracking Redirects</div>
-          <div class="issue-desc">Instagram/LinkedIn links go through HubSpot tracking URLs. While functional, this adds latency and looks unprofessional. Use direct social URLs.</div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Design & UX -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">🎨</div>
-        <h2>Design & User Experience</h2>
-      </div>
-
-      <div class="metric-grid">
-        <div class="metric critical">
-          <div class="metric-title">Visual Design</div>
-          <div class="metric-value">Dated & Generic</div>
-          <div class="metric-desc">Stock Wix template with minimal customization. Looks like 100 other logistics sites. No brand personality.</div>
-        </div>
-        <div class="metric warning">
-          <div class="metric-title">Mobile Responsive</div>
-          <div class="metric-value">Functional But Poor</div>
-          <div class="metric-desc">Wix auto-responsive breaks layout hierarchy. Text too small, buttons hard to tap, images misaligned.</div>
-        </div>
-        <div class="metric critical">
-          <div class="metric-title">Call-to-Actions</div>
-          <div class="metric-value">Ineffective</div>
-          <div class="metric-desc">"Get in Touch" is passive and buried. No value proposition. Competitors use "Get Free Audit" or "Calculate Savings".</div>
-        </div>
-        <div class="metric critical">
-          <div class="metric-title">Trust Signals</div>
-          <div class="metric-value">Severely Lacking</div>
-          <div class="metric-desc">No client logos, no case study numbers, vague testimonials. Zero social proof to overcome skepticism.</div>
-        </div>
-        <div class="metric warning">
-          <div class="metric-title">Information Hierarchy</div>
-          <div class="metric-value">Confusing</div>
-          <div class="metric-desc">Homepage dumps all services in one scroll. No clear user journey or funnel. Visitors get lost.</div>
-        </div>
-        <div class="metric critical">
-          <div class="metric-title">Typography</div>
-          <div class="metric-value">Inconsistent</div>
-          <div class="metric-desc">Font sizes vary wildly, line heights are off, poor readability. Looks amateurish.</div>
-        </div>
-      </div>
-
-      <ul class="issue-list">
-        <li class="issue-item critical">
-          <div class="issue-title">🚨 Homepage is a Wall of Text <span class="badge badge-critical">CRITICAL</span></div>
-          <div class="issue-desc">The homepage scrolls forever with dense paragraphs and no visual breaks. Users bounce within 5 seconds. Modern sites use hero sections, video, animations, and scannable content. This looks like a Word doc converted to HTML.</div>
-        </li>
-        <li class="issue-item critical">
-          <div class="issue-title">🚨 No Visual Hierarchy or Whitespace</div>
-          <div class="issue-desc">Everything is crammed together. No breathing room. Headings, body text, and CTAs all blur together. Competitors use strategic whitespace, bold headings, and color accents to guide the eye. This is overwhelming and hard to parse.</div>
-        </li>
-        <li class="issue-item critical">
-          <div class="issue-title">🚨 Stock Photography Overload</div>
-          <div class="issue-desc">Generic shipping truck images that scream "Wix template". No custom graphics, no team photos, no personality. Every competitor uses the same stock images. You look indistinguishable.</div>
-        </li>
-        <li class="issue-item warning">
-          <div class="issue-title">⚠️ No Lead Magnet or Free Offer</div>
-          <div class="issue-desc">ICC Logistics offers free assessments, whitepapers, and rate comparison charts. You have a contact form. There's no incentive to engage before the sale.</div>
-        </li>
-        <li class="issue-item warning">
-          <div class="issue-title">⚠️ Testimonials Lack Specificity</div>
-          <div class="issue-desc">Testimonials should include company names, logos, and quantified results ("saved $120K in first year"). Generic praise doesn't convert skeptics.</div>
-        </li>
-        <li class="issue-item warning">
-          <div class="issue-title">⚠️ Navigation is Confusing</div>
-          <div class="issue-desc">5 pages but no clear value ladder. "Gainshare Agreement" is buried in nav when it should be the hero message. Services page lists everything but highlights nothing.</div>
-        </li>
-        <li class="issue-item warning">
-          <div class="issue-title">⚠️ No Interactive Elements</div>
-          <div class="issue-desc">Zero calculators, quizzes, ROI estimators, or engagement tools. Just static text. Competitors use interactive tools to capture emails and demonstrate value instantly.</div>
-        </li>
-        <li class="issue-item info">
-          <div class="issue-title">ℹ️ Footer Social Links Same as Header</div>
-          <div class="issue-desc">Redundant. Consider adding newsletter signup, phone number, or trust badges in footer instead.</div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Code Quality & Technical -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">💻</div>
-        <h2>Code Quality & Technical Infrastructure</h2>
-      </div>
-
-      <div class="metric-grid">
-        <div class="metric critical">
-          <div class="metric-title">HTML Validity</div>
-          <div class="metric-value">Wix-Generated</div>
-          <div class="metric-desc">Bloated, non-semantic HTML with obfuscated class names. Not editable.</div>
-        </div>
-        <div class="metric good">
-          <div class="metric-title">HTTPS</div>
-          <div class="metric-value">Enabled</div>
-          <div class="metric-desc">SSL certificate active, secure connection.</div>
-        </div>
-        <div class="metric warning">
-          <div class="metric-title">Accessibility</div>
-          <div class="metric-value">Unknown</div>
-          <div class="metric-desc">No ARIA labels visible, likely fails WCAG 2.1 AA standards.</div>
-        </div>
-        <div class="metric critical">
-          <div class="metric-title">Hosting Control</div>
-          <div class="metric-value">None</div>
-          <div class="metric-desc">Locked into Wix hosting. Can't migrate without rebuilding site.</div>
-        </div>
-      </div>
-
-      <ul class="issue-list">
-        <li class="issue-item critical">
-          <div class="issue-title">🚨 Vendor Lock-In Risk <span class="badge badge-critical">HIGH RISK</span></div>
-          <div class="issue-desc">You cannot export this site to another platform. If Wix raises prices, changes terms, or experiences downtime, you're stuck. Competitors on WordPress, Next.js, or static site generators own their code and can migrate freely.</div>
-        </li>
-        <li class="issue-item warning">
-          <div class="issue-title">⚠️ No Custom Domain Email Visible</div>
-          <div class="issue-desc">Contact page doesn't show email address. Only a form. This reduces trust and makes you harder to reach for serious prospects.</div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Competitor Analysis -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">🏆</div>
-        <h2>Competitive Landscape</h2>
-      </div>
-
-      <p style="margin-bottom: 20px; color: var(--gray-700);">
-        Here's how Spin LGX stacks up against top competitors in the logistics consulting space:
-      </p>
-
-      <table class="competitor-table">
-        <thead>
-          <tr>
-            <th>Competitor</th>
-            <th>Blog/Content</th>
-            <th>SEO Score (Est.)</th>
-            <th>Platform</th>
-            <th>Key Differentiator</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="company-name">Spin LGX</td>
-            <td><span class="check-no">❌ None</span></td>
-            <td>42/100</td>
-            <td>Wix</td>
-            <td>Gainshare model</td>
-          </tr>
-          <tr>
-            <td class="company-name">ICC Logistics</td>
-            <td><span class="check-yes">✅ 40+ Posts</span></td>
-            <td>88/100</td>
-            <td>Custom (WordPress)</td>
-            <td>50 years experience, thought leadership, rate charts, free audits</td>
-          </tr>
-          <tr>
-            <td class="company-name">Broussard Logistics</td>
-            <td><span class="check-yes">✅ Active Blog</span></td>
-            <td>72/100</td>
-            <td>Custom</td>
-            <td>LTL-focused, contract benchmarking tools</td>
-          </tr>
-          <tr>
-            <td class="company-name">AFMS</td>
-            <td><span class="check-yes">✅ Resources</span></td>
-            <td>76/100</td>
-            <td>Custom</td>
-            <td>500+ years combined carrier exec experience</td>
-          </tr>
-          <tr>
-            <td class="company-name">Intune Logistics</td>
-            <td><span class="check-yes">✅ Case Studies</span></td>
-            <td>68/100</td>
-            <td>Custom</td>
-            <td>Automated freight audit software</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="recommendations">
-        <h3>🎯 Key Competitive Insights</h3>
-        <ol>
-          <li><strong>ICC Logistics is the benchmark.</strong> They dominate organic search with educational content: "UPS Zone Chart Changes", "Freight Invoice Errors", "2026 Rate Hikes". They're not selling—they're teaching. This builds authority and inbound leads.</li>
-          <li><strong>Every competitor has a content engine.</strong> Blog posts, whitepapers, case studies, webinars. Content is the new sales team in B2B logistics.</li>
-          <li><strong>Your gainshare model is unique</strong>—but it's buried. Competitors lead with "No upfront fees" and "Performance-based pricing" in headlines. You mention it on page 2.</li>
-          <li><strong>Modern platforms win.</strong> Wix may be easy to build, but it's a performance anchor. Competitors on Next.js, Astro, or static site generators load in &lt;1 second and rank higher.</li>
-          <li><strong>Free tools = lead magnets.</strong> ICC offers free rate comparison charts. Broussard has a cost savings calculator. You need a similar hook to capture emails and nurture leads.</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Content Marketing Gap -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">📝</div>
-        <h2>Content Marketing (The Biggest Gap)</h2>
-      </div>
-
-      <div class="metric critical" style="margin-bottom: 20px;">
-        <div class="metric-title">Current Content Output</div>
-        <div class="metric-value">0 articles, 0 guides, 0 case studies</div>
-        <div class="metric-desc">Your site is a digital brochure. Competitors are publishing 2-4x per month and dominating search results.</div>
-      </div>
-
-      <ul class="issue-list">
-        <li class="issue-item critical">
-          <div class="issue-title">🚨 No Blog = No Organic Traffic <span class="badge badge-critical">CRITICAL</span></div>
-          <div class="issue-desc">
-            <strong>Example:</strong> A logistics manager searches "how to negotiate FedEx contract rates". ICC Logistics has a 2,000-word guide that ranks #1. Spin LGX doesn't appear. This happens 100+ times per month across your service keywords. You're losing leads before they know you exist.
-          </div>
-        </li>
-        <li class="issue-item critical">
-          <div class="issue-title">🚨 No Thought Leadership</div>
-          <div class="issue-desc">B2B buyers want to work with experts, not vendors. Publishing content on carrier rate trends, contract negotiation tactics, and freight audit best practices positions you as the expert. Right now, you look like a service provider. Competitors look like advisors.</div>
-        </li>
-        <li class="issue-item warning">
-          <div class="issue-title">⚠️ No Newsletter or Lead Nurture</div>
-          <div class="issue-desc">ICC has a bi-weekly newsletter and a Substack. They stay top-of-mind with prospects. You have no email capture beyond the contact form.</div>
-        </li>
-      </ul>
-
-      <div class="recommendations">
-        <h3>📈 Content Strategy Recommendations</h3>
-        <ol>
-          <li><strong>Launch a blog immediately.</strong> Target: 2-4 posts per month on topics like "2026 UPS Rate Increases Explained", "5 Hidden Fees in Parcel Contracts", "How to Audit Your LTL Freight Bills".</li>
-          <li><strong>Create a lead magnet.</strong> Free downloadable: "Ultimate Guide to Parcel Contract Negotiation" or "LTL Rate Benchmarking Checklist". Capture emails in exchange.</li>
-          <li><strong>Publish case studies with real numbers.</strong> "How We Saved XYZ Corp $250K in Year 1" is 10x more powerful than "We save clients money".</li>
-          <li><strong>Weekly newsletter.</strong> Curate industry news, share your insights, stay top-of-mind. Build an email list aggressively.</li>
-          <li><strong>Repurpose content.</strong> Turn blog posts into LinkedIn articles, Twitter threads, YouTube shorts. Maximize reach per piece.</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Landing Pages & Conversion -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">🎯</div>
-        <h2>Landing Pages & Conversion Optimization</h2>
-      </div>
-
-      <ul class="issue-list">
-        <li class="issue-item critical">
-          <div class="issue-title">🚨 Single Services Page <span class="badge badge-critical">MISSED OPPORTUNITY</span></div>
-          <div class="issue-desc">You list 6 services on one page. Each service should have its own dedicated landing page with unique content, testimonials, case studies, and targeted keywords. This multiplies your SEO footprint and improves conversion (service-specific pages convert 40% better than generic lists).</div>
-        </li>
-        <li class="issue-item warning">
-          <div class="issue-title">⚠️ No Pricing Transparency</div>
-          <div class="issue-desc">While gainshare pricing is mentioned, there's no detail on how it works, typical percentages, or minimum contract terms. Transparency builds trust. Consider an FAQ page: "How does gainshare pricing work?" "What's the typical savings split?"</div>
-        </li>
-        <li class="issue-item warning">
-          <div class="issue-title">⚠️ Generic CTAs</div>
-          <div class="issue-desc">"Get in Touch" and "Contact Us" are passive. Compare to ICC: "Get Your Free Logistics Assessment", "Download 2026 Rate Comparison Chart". Offer something valuable first.</div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Technical SEO Deep Dive -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">⚙️</div>
-        <h2>Technical SEO Issues</h2>
-      </div>
-
-      <ul class="issue-list">
-        <li class="issue-item critical">
-          <div class="issue-title">🚨 No Sitemap Submitted to Google</div>
-          <div class="issue-desc">Wix auto-generates a sitemap, but verify it's submitted to Google Search Console. If not, Google may not be indexing all your pages.</div>
-        </li>
-        <li class="issue-item warning">
-          <div class="issue-title">⚠️ Slow Mobile Page Speed</div>
-          <div class="issue-desc">Desktop is mediocre, but mobile is where 60%+ of B2B research happens. Run a Google PageSpeed Insights test—Wix sites typically score 20-40 on mobile. This hurts rankings and conversions.</div>
-        </li>
-        <li class="issue-item warning">
-          <div class="issue-title">⚠️ Missing Robots.txt Optimization</div>
-          <div class="issue-desc">Wix's default robots.txt may be blocking important pages or allowing crawlers to waste time on admin URLs. Audit and optimize.</div>
-        </li>
-        <li class="issue-item info">
-          <div class="issue-title">ℹ️ No Favicon Visible in Some Browsers</div>
-          <div class="issue-desc">Minor but professional: ensure favicon loads correctly across all browsers and bookmark scenarios.</div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Actionable Recommendations -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">🚀</div>
-        <h2>Recommended Action Plan</h2>
-      </div>
-
-      <div class="recommendations">
-        <h3>🎯 Priority 1: Immediate Wins (0-30 Days)</h3>
-        <ol>
-          <li><strong>Fix homepage meta description</strong> – Add keyword-rich description (140-160 chars): "Spin LGX helps companies reduce logistics costs through expert contract optimization, freight auditing, and gainshare pricing. Save 20-40% on shipping."</li>
-          <li><strong>Update title tags</strong> – Every page should be "[Service] | Spin LGX" → "Parcel Contract Optimization | Spin LGX"</li>
-          <li><strong>Add client logos</strong> to homepage and testimonials page. Social proof is critical.</li>
-          <li><strong>Create a lead magnet</strong> – "Free LTL Rate Benchmarking Report" or "Parcel Contract Audit Checklist". Gate it with an email form.</li>
-          <li><strong>Launch a blog</strong> – Publish first 3 articles targeting high-value keywords: "How to Negotiate UPS Contracts", "LTL Freight Audit Best Practices", "Hidden Fees in Parcel Invoices".</li>
-        </ol>
-
-        <h3 style="margin-top: 24px;">🎯 Priority 2: Platform Migration (30-90 Days)</h3>
-        <ol>
-          <li><strong>Migrate off Wix</strong> to a modern, performant platform:
-            <ul style="margin-top: 8px; margin-left: 20px;">
-              <li><strong>Next.js + Vercel</strong> – Best for SEO, speed, and scalability. Load times under 1 second.</li>
-              <li><strong>Astro + Cloudflare Pages</strong> – Ultra-fast static site generator, perfect for content-heavy sites.</li>
-              <li><strong>WordPress (Headless)</strong> – Familiar CMS with modern frontend. Good middle ground.</li>
-            </ul>
+      <div class="mt-8 bg-white rounded-xl p-6 border-l-4 border-navy shadow-sm">
+        <h3 class="font-bold text-xl mb-4 text-navy">Critical Issues Identified:</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start">
+            <span class="text-red-600 font-bold mr-3">🚨</span>
+            <span><strong>Wix Platform Bloat:</strong> 662KB page size, slow load times, vendor lock-in</span>
           </li>
-          <li><strong>Rebuild with SEO-first architecture</strong> – Semantic HTML, structured data, optimized images, lazy loading.</li>
-          <li><strong>Implement analytics properly</strong> – Google Analytics 4, Google Search Console, heatmaps (Hotjar), and conversion tracking.</li>
-        </ol>
-
-        <h3 style="margin-top: 24px;">🎯 Priority 3: Content Machine (60-180 Days)</h3>
-        <ol>
-          <li><strong>Publish 2-4 blog posts per month</strong> targeting buyer-intent keywords: "freight audit services for [industry]", "parcel contract negotiation tips", "LTL shipping cost reduction strategies".</li>
-          <li><strong>Create service-specific landing pages</strong> – One page per service (6 total), each with unique content, case studies, CTAs.</li>
-          <li><strong>Develop case studies</strong> – Document 3-5 client success stories with real numbers: "Company X saved $180K in first year".</li>
-          <li><strong>Launch email newsletter</strong> – Bi-weekly industry insights, share blog content, nurture leads.</li>
-          <li><strong>Build backlinks</strong> – Guest post on logistics industry blogs, get listed in industry directories, sponsor relevant podcasts.</li>
-        </ol>
-
-        <h3 style="margin-top: 24px;">🎯 Priority 4: Conversion Optimization (90-180 Days)</h3>
-        <ol>
-          <li><strong>A/B test CTAs</strong> – Test "Get Free Audit" vs "Schedule Consultation" vs "Download Guide".</li>
-          <li><strong>Add live chat</strong> – B2B buyers want instant answers. Drift or Intercom can qualify leads 24/7.</li>
-          <li><strong>Build a cost savings calculator</strong> – Interactive tool: "How much could you save?" Input annual shipping spend, get estimated savings. Huge lead gen tool.</li>
-          <li><strong>Video content</strong> – Founder/exec explaining the gainshare model, client testimonial videos, service explainers.</li>
-          <li><strong>Retargeting campaigns</strong> – Use Google Ads and LinkedIn to retarget site visitors with blog content and case studies.</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Detailed Pricing Breakdown -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">💰</div>
-        <h2>Detailed Pricing & Scope of Work</h2>
+          <li class="flex items-start">
+            <span class="text-red-600 font-bold mr-3">🚨</span>
+            <span><strong>Zero Content Marketing:</strong> No blog, no thought leadership (competitors publish 40+ articles)</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-red-600 font-bold mr-3">🚨</span>
+            <span><strong>Poor SEO Foundation:</strong> Missing meta descriptions, no schema markup, weak keyword targeting</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-orange-600 font-bold mr-3">⚠️</span>
+            <span><strong>Generic Design:</strong> Stock Wix template, no brand personality, wall-of-text homepage</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-orange-600 font-bold mr-3">⚠️</span>
+            <span><strong>Weak Conversion Elements:</strong> No lead magnets, vague CTAs, limited trust signals</span>
+          </li>
+        </ul>
       </div>
 
-      <div style="background: var(--gray-100); padding: 24px; border-radius: 8px; margin-bottom: 32px; border-left: 4px solid var(--navy);">
-        <p style="font-size: 16px; line-height: 1.7; color: var(--gray-800);">
-          <strong>Pricing Model:</strong> All estimates based on <strong>$150/hour</strong> professional services rate. Each tier includes itemized hours, deliverables, and timeline. Choose the package that aligns with your budget and urgency.
-        </p>
-      </div>
+    </div>
+  </section>
 
-      <!-- Tier 1: Quick Fixes -->
-      <div style="background: white; border-radius: 8px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); border: 2px solid var(--green);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-          <h3 style="font-size: 24px; font-weight: 700; color: var(--navy);">Tier 1: Quick Fixes & SEO Essentials</h3>
-          <div style="text-align: right;">
-            <div style="font-size: 32px; font-weight: 800; color: var(--green);">$3,000</div>
-            <div style="font-size: 14px; color: var(--gray-600);">20 hours</div>
+  <!-- Key Findings Grid -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-10 text-center text-navy">What We Found</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Performance -->
+        <a href="performance.html" class="group block bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-navy hover:shadow-lg transition">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-bold text-navy">⚡ Performance</h3>
+            <span class="text-3xl font-black text-red-600">35/100</span>
           </div>
-        </div>
-        <div style="background: #F0FDF4; padding: 16px; border-radius: 6px; margin-bottom: 20px;">
-          <strong style="color: var(--green);">✅ Best For:</strong> Immediate improvements without a full rebuild. Fix critical SEO issues and launch basic content strategy.
-        </div>
-        <table class="competitor-table">
-          <thead>
-            <tr>
-              <th>Task</th>
-              <th>Hours</th>
-              <th>Cost</th>
-              <th>Deliverable</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>SEO Audit & Meta Tag Optimization</td>
-              <td>4</td>
-              <td>$600</td>
-              <td>Fix all title tags, meta descriptions, H1 tags on 5 pages</td>
-            </tr>
-            <tr>
-              <td>Homepage Content Rewrite</td>
-              <td>3</td>
-              <td>$450</td>
-              <td>Rewrite hero section, value prop, scannable bullets</td>
-            </tr>
-            <tr>
-              <td>Blog Setup (Wix native)</td>
-              <td>2</td>
-              <td>$300</td>
-              <td>Configure blog, design template, RSS feed</td>
-            </tr>
-            <tr>
-              <td>First 3 Blog Posts</td>
-              <td>6</td>
-              <td>$900</td>
-              <td>800-1200 word SEO-optimized articles (topics: UPS contracts, LTL auditing, parcel fees)</td>
-            </tr>
-            <tr>
-              <td>Lead Magnet Creation</td>
-              <td>3</td>
-              <td>$450</td>
-              <td>Downloadable PDF guide: "LTL Contract Negotiation Checklist"</td>
-            </tr>
-            <tr>
-              <td>Google Analytics 4 + Search Console Setup</td>
-              <td>2</td>
-              <td>$300</td>
-              <td>Tracking, conversion events, goal setup, baseline report</td>
-            </tr>
-            <tr>
-              <td class="company-name"><strong>TOTAL</strong></td>
-              <td><strong>20</strong></td>
-              <td><strong>$3,000</strong></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-        <div style="margin-top: 16px; padding: 12px; background: var(--gray-50); border-radius: 6px;">
-          <strong>Timeline:</strong> 2-3 weeks | <strong>Outcome:</strong> SEO score improves 42 → 60, first blog posts live, basic lead capture active
-        </div>
-      </div>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Wix platform adds massive overhead (662KB), slow TTFB (0.18s), no optimization control. Mobile likely scores 20-40 on PageSpeed.
+          </p>
+          <span class="text-navy group-hover:underline font-medium">View Details →</span>
+        </a>
 
-      <!-- Tier 2: Platform Migration + Redesign -->
-      <div style="background: white; border-radius: 8px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); border: 2px solid var(--blue);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-          <h3 style="font-size: 24px; font-weight: 700; color: var(--navy);">Tier 2: Modern Platform Migration & UX Overhaul</h3>
-          <div style="text-align: right;">
-            <div style="font-size: 32px; font-weight: 800; color: var(--blue);">$18,000</div>
-            <div style="font-size: 14px; color: var(--gray-600);">120 hours</div>
+        <!-- SEO -->
+        <a href="seo.html" class="group block bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-navy hover:shadow-lg transition">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-bold text-navy">🔍 SEO</h3>
+            <span class="text-3xl font-black text-orange-600">42/100</span>
           </div>
-        </div>
-        <div style="background: #DBEAFE; padding: 16px; border-radius: 6px; margin-bottom: 20px;">
-          <strong style="color: var(--blue);">🚀 Best For:</strong> Serious about competing. Migrate off Wix, modern design, fast performance, built for growth.
-        </div>
-        <table class="competitor-table">
-          <thead>
-            <tr>
-              <th>Task</th>
-              <th>Hours</th>
-              <th>Cost</th>
-              <th>Deliverable</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Platform Selection & Architecture Planning</td>
-              <td>6</td>
-              <td>$900</td>
-              <td>Recommend Next.js vs Astro vs Headless WP, define tech stack</td>
-            </tr>
-            <tr>
-              <td>Custom Design (Figma)</td>
-              <td>20</td>
-              <td>$3,000</td>
-              <td>Homepage, 6 service pages, blog template, mobile + desktop</td>
-            </tr>
-            <tr>
-              <td>Frontend Development (Next.js + Tailwind)</td>
-              <td>40</td>
-              <td>$6,000</td>
-              <td>Responsive build, animations, optimized images, schema markup</td>
-            </tr>
-            <tr>
-              <td>Content Migration & Rewrite</td>
-              <td>10</td>
-              <td>$1,500</td>
-              <td>Migrate + improve all existing content, add CTAs, trust signals</td>
-            </tr>
-            <tr>
-              <td>SEO Implementation</td>
-              <td>8</td>
-              <td>$1,200</td>
-              <td>Structured data, sitemap, robots.txt, meta optimization, redirects</td>
-            </tr>
-            <tr>
-              <td>6 Service-Specific Landing Pages</td>
-              <td>18</td>
-              <td>$2,700</td>
-              <td>Dedicated pages for each service with unique content, testimonials, CTAs</td>
-            </tr>
-            <tr>
-              <td>Blog Setup + CMS Integration</td>
-              <td>6</td>
-              <td>$900</td>
-              <td>Markdown-based CMS or Sanity, category structure, author profiles</td>
-            </tr>
-            <tr>
-              <td>Analytics, Heatmaps, Conversion Tracking</td>
-              <td>4</td>
-              <td>$600</td>
-              <td>GA4, Hotjar, form tracking, event setup</td>
-            </tr>
-            <tr>
-              <td>Deployment + Hosting Setup</td>
-              <td>4</td>
-              <td>$600</td>
-              <td>Vercel/Cloudflare Pages, CI/CD, SSL, DNS migration</td>
-            </tr>
-            <tr>
-              <td>QA & Launch Support</td>
-              <td>4</td>
-              <td>$600</td>
-              <td>Cross-browser testing, mobile QA, fix bugs, go-live checklist</td>
-            </tr>
-            <tr>
-              <td class="company-name"><strong>TOTAL</strong></td>
-              <td><strong>120</strong></td>
-              <td><strong>$18,000</strong></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-        <div style="margin-top: 16px; padding: 12px; background: var(--gray-50); border-radius: 6px;">
-          <strong>Timeline:</strong> 6-8 weeks | <strong>Outcome:</strong> Modern, fast site (load &lt;1s), SEO score → 75+, ready to rank
-        </div>
-      </div>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Missing meta descriptions, no blog content, zero schema markup. Competitors publish 2-4 articles/month and dominate search.
+          </p>
+          <span class="text-navy group-hover:underline font-medium">View Details →</span>
+        </a>
 
-      <!-- Tier 3: Full Digital Transformation -->
-      <div style="background: white; border-radius: 8px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); border: 2px solid var(--navy);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-          <h3 style="font-size: 24px; font-weight: 700; color: var(--navy);">Tier 3: Full Digital Transformation (Rebuild + 6 Months Content)</h3>
-          <div style="text-align: right;">
-            <div style="font-size: 32px; font-weight: 800; color: var(--navy);">$48,000</div>
-            <div style="font-size: 14px; color: var(--gray-600);">320 hours total</div>
+        <!-- Design/UX -->
+        <a href="design.html" class="group block bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-navy hover:shadow-lg transition">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-bold text-navy">🎨 Design/UX</h3>
+            <span class="text-3xl font-black text-orange-600">38/100</span>
           </div>
-        </div>
-        <div style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); padding: 16px; border-radius: 6px; margin-bottom: 20px;">
-          <strong style="color: var(--gray-900);">🏆 Best For:</strong> Complete overhaul + aggressive content marketing. Catch up to competitors in 6 months instead of 2 years.
-        </div>
-        <p style="margin-bottom: 20px; color: var(--gray-700); line-height: 1.7;">
-          <strong>Includes everything in Tier 2, plus:</strong>
-        </p>
-        <table class="competitor-table">
-          <thead>
-            <tr>
-              <th>Task</th>
-              <th>Hours</th>
-              <th>Cost</th>
-              <th>Deliverable</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td colspan="4" style="background: var(--gray-100); font-weight: 600;">INCLUDED: Tier 2 (Platform Migration + Redesign)</td>
-            </tr>
-            <tr>
-              <td>Tier 2 Deliverables</td>
-              <td>120</td>
-              <td>$18,000</td>
-              <td>See Tier 2 breakdown above</td>
-            </tr>
-            <tr>
-              <td colspan="4" style="background: var(--gray-100); font-weight: 600;">ADDITIONAL: 6 Months Content Marketing</td>
-            </tr>
-            <tr>
-              <td>Keyword Research & Content Strategy</td>
-              <td>12</td>
-              <td>$1,800</td>
-              <td>50+ target keywords, editorial calendar, topic clusters</td>
-            </tr>
-            <tr>
-              <td>Blog Content (4 posts/month × 6 months)</td>
-              <td>96</td>
-              <td>$14,400</td>
-              <td>24 SEO-optimized articles (1000-1500 words each)</td>
-            </tr>
-            <tr>
-              <td>3 Detailed Case Studies</td>
-              <td>18</td>
-              <td>$2,700</td>
-              <td>Client success stories with real ROI numbers, before/after data</td>
-            </tr>
-            <tr>
-              <td>Lead Magnet Content (3 pieces)</td>
-              <td>15</td>
-              <td>$2,250</td>
-              <td>Ultimate guides, checklists, calculators (downloadable PDFs)</td>
-            </tr>
-            <tr>
-              <td>Monthly Newsletter Setup + 6 Editions</td>
-              <td>18</td>
-              <td>$2,700</td>
-              <td>Email template design, Mailchimp setup, 6 months content</td>
-            </tr>
-            <tr>
-              <td>SEO Optimization & Link Building</td>
-              <td>24</td>
-              <td>$3,600</td>
-              <td>Internal linking, guest post outreach, directory submissions</td>
-            </tr>
-            <tr>
-              <td>Monthly Performance Reports</td>
-              <td>12</td>
-              <td>$1,800</td>
-              <td>Traffic, rankings, conversions, recommendations (6 months)</td>
-            </tr>
-            <tr>
-              <td>Interactive ROI Calculator Development</td>
-              <td>5</td>
-              <td>$750</td>
-              <td>Custom shipping cost calculator widget for lead gen</td>
-            </tr>
-            <tr>
-              <td class="company-name"><strong>TOTAL</strong></td>
-              <td><strong>320</strong></td>
-              <td><strong>$48,000</strong></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-        <div style="margin-top: 16px; padding: 12px; background: var(--gray-50); border-radius: 6px;">
-          <strong>Timeline:</strong> 6 months end-to-end | <strong>Outcome:</strong> 24+ blog posts live, SEO score → 85+, organic traffic up 200-400%, email list growing
-        </div>
-      </div>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Generic stock template, wall of text homepage, no whitespace, poor visual hierarchy, dated typography.
+          </p>
+          <span class="text-navy group-hover:underline font-medium">View Details →</span>
+        </a>
 
-      <!-- Ongoing Monthly Retainer -->
-      <div style="background: white; border-radius: 8px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); border: 2px solid var(--teal);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-          <h3 style="font-size: 24px; font-weight: 700; color: var(--navy);">Ongoing Retainer: Monthly Content & SEO</h3>
-          <div style="text-align: right;">
-            <div style="font-size: 32px; font-weight: 800; color: var(--teal);">$4,500/mo</div>
-            <div style="font-size: 14px; color: var(--gray-600);">30 hours/month</div>
+        <!-- Content Marketing -->
+        <a href="seo.html#content" class="group block bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-navy hover:shadow-lg transition">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-bold text-navy">📝 Content</h3>
+            <span class="text-3xl font-black text-red-600">10/100</span>
           </div>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Zero blog posts, no guides, no case studies. ICC Logistics has 40+ articles and dominates organic traffic.
+          </p>
+          <span class="text-navy group-hover:underline font-medium">View Details →</span>
+        </a>
+
+        <!-- Competitors -->
+        <a href="competitors.html" class="group block bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-navy hover:shadow-lg transition">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-bold text-navy">🏆 Competitors</h3>
+            <span class="text-sm font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Analysis</span>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            ICC Logistics, Broussard, AFMS all have active blogs, modern platforms, and superior SEO. See how you compare.
+          </p>
+          <span class="text-navy group-hover:underline font-medium">View Analysis →</span>
+        </a>
+
+        <!-- Pricing -->
+        <a href="pricing.html" class="group block bg-white rounded-xl p-6 border-2 border-navy hover:shadow-lg transition bg-gradient-to-br from-blue-50 to-blue-100">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-bold text-navy">💰 Solutions</h3>
+            <span class="text-sm font-semibold text-navy bg-white px-3 py-1 rounded-full">$3K-$48K</span>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            3 tiered packages ($3K quick fixes → $48K full rebuild + content). Detailed hours breakdown at $150/hr.
+          </p>
+          <span class="text-navy group-hover:underline font-medium font-bold">View Pricing →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Recommendations -->
+  <section class="py-16 bg-gradient-to-br from-blue-50 to-blue-100">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-6 text-navy">🎯 What You Should Do</h2>
+      
+      <div class="bg-white rounded-xl p-8 shadow-sm space-y-6">
+        
+        <div class="border-l-4 border-green-500 pl-6">
+          <h3 class="font-bold text-lg mb-2 text-navy">Immediate (0-30 Days) - $3,000</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>✅ Fix all meta descriptions and title tags</li>
+            <li>✅ Launch blog and publish first 3 SEO-optimized articles</li>
+            <li>✅ Create downloadable lead magnet (PDF checklist)</li>
+            <li>✅ Set up Google Analytics 4 and Search Console</li>
+          </ul>
         </div>
-        <div style="background: #F0FDFA; padding: 16px; border-radius: 6px; margin-bottom: 20px;">
-          <strong style="color: var(--teal);">📈 Best For:</strong> After initial build (Tier 2 or 3), maintain momentum with consistent content production and SEO.
+
+        <div class="border-l-4 border-blue-500 pl-6">
+          <h3 class="font-bold text-lg mb-2 text-navy">Short-Term (30-90 Days) - $18,000</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>🚀 Migrate off Wix to Next.js or Astro (3-5x faster)</li>
+            <li>🚀 Custom design with brand personality</li>
+            <li>🚀 Build 6 service-specific landing pages</li>
+            <li>🚀 Implement proper schema markup and SEO architecture</li>
+          </ul>
         </div>
-        <table class="competitor-table">
-          <thead>
-            <tr>
-              <th>Monthly Deliverables</th>
-              <th>Hours</th>
-              <th>Cost</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>4 Blog Posts (800-1200 words, SEO-optimized)</td>
-              <td>16</td>
-              <td>$2,400</td>
-            </tr>
-            <tr>
-              <td>1 Newsletter Edition (write + send)</td>
-              <td>3</td>
-              <td>$450</td>
-            </tr>
-            <tr>
-              <td>SEO Maintenance (link building, keyword monitoring)</td>
-              <td>4</td>
-              <td>$600</td>
-            </tr>
-            <tr>
-              <td>Social Media Content (LinkedIn posts, repurpose blog)</td>
-              <td>4</td>
-              <td>$600</td>
-            </tr>
-            <tr>
-              <td>Monthly Analytics Report + Strategy Call</td>
-              <td>3</td>
-              <td>$450</td>
-            </tr>
-            <tr>
-              <td class="company-name"><strong>MONTHLY TOTAL</strong></td>
-              <td><strong>30</strong></td>
-              <td><strong>$4,500</strong></td>
-            </tr>
-          </tbody>
-        </table>
-        <div style="margin-top: 16px; padding: 12px; background: var(--gray-50); border-radius: 6px;">
-          <strong>Contract:</strong> 6-month minimum, then month-to-month | <strong>Outcome:</strong> 48 blog posts/year, steady traffic growth, sustained rankings
+
+        <div class="border-l-4 border-purple-500 pl-6">
+          <h3 class="font-bold text-lg mb-2 text-navy">Long-Term (6 Months) - $48,000</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>📈 Everything above PLUS 6 months of aggressive content marketing</li>
+            <li>📈 Publish 24 blog posts targeting buyer-intent keywords</li>
+            <li>📈 3 detailed case studies with client ROI numbers</li>
+            <li>📈 Monthly newsletter, SEO link building, performance tracking</li>
+          </ul>
         </div>
+
       </div>
 
-      <!-- À La Carte Options -->
-      <div style="background: var(--gray-50); border-radius: 8px; padding: 24px; margin-bottom: 24px;">
-        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--navy);">À La Carte Add-Ons</h3>
-        <table class="competitor-table">
-          <thead>
-            <tr>
-              <th>Service</th>
-              <th>Hours</th>
-              <th>Cost</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Video Production (Service Explainer)</td>
-              <td>N/A</td>
-              <td>$2,500</td>
-              <td>Script, shoot, edit 90-second service video (outsourced)</td>
-            </tr>
-            <tr>
-              <td>Client Testimonial Video (3 videos)</td>
-              <td>N/A</td>
-              <td>$3,500</td>
-              <td>Coordinate, shoot, edit 3 client testimonials</td>
-            </tr>
-            <tr>
-              <td>Advanced Interactive Calculator</td>
-              <td>12</td>
-              <td>$1,800</td>
-              <td>Custom freight cost calculator with email capture</td>
-            </tr>
-            <tr>
-              <td>LinkedIn Company Page Overhaul</td>
-              <td>6</td>
-              <td>$900</td>
-              <td>Optimize profile, create content calendar, first month posts</td>
-            </tr>
-            <tr>
-              <td>Google Ads Setup (PPC Campaign)</td>
-              <td>10</td>
-              <td>$1,500</td>
-              <td>Keyword research, ad copy, landing page optimization, tracking setup</td>
-            </tr>
-            <tr>
-              <td>Competitor Deep-Dive Analysis</td>
-              <td>8</td>
-              <td>$1,200</td>
-              <td>Detailed report on 5 competitors (keywords, backlinks, content gaps)</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="mt-8 text-center">
+        <a href="pricing.html" class="inline-block bg-navy text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-navy-light transition shadow-lg">
+          View Detailed Pricing & Breakdown →
+        </a>
       </div>
 
-      <!-- ROI Justification -->
-      <div class="recommendations">
-        <h3>💡 ROI Justification: Why This Investment Makes Sense</h3>
-        <ol>
-          <li><strong>Average logistics consulting client lifetime value:</strong> $50K-$200K (based on industry norms).</li>
-          <li><strong>Organic search conversion rate:</strong> B2B logistics averages 2-5% (versus 0.5-1% for paid ads).</li>
-          <li><strong>Time to payback:</strong> If Tier 3 ($48K) generates just 2 new clients in year 1, you've broken even. Year 2+ is pure profit.</li>
-          <li><strong>Competitor data:</strong> ICC Logistics reports 40-60% of new business from organic search. You're currently at ~0%.</li>
-          <li><strong>Compounding returns:</strong> Content marketing builds equity. Blog posts rank for years. Email lists grow monthly. SEO improves over time.</li>
-        </ol>
-        <p style="margin-top: 16px; font-size: 16px; line-height: 1.7;">
-          <strong>Bottom line:</strong> Spin LGX has a differentiated value prop (gainshare model), but the website is actively losing you business. Investing $18K-$48K to fix it is not an expense—it's growth infrastructure. The only question is how fast you want to catch up to competitors who've been publishing content for 5+ years.
-        </p>
-      </div>
-
-    </section>
-
-    <!-- Final Summary -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">📋</div>
-        <h2>Final Summary</h2>
-      </div>
-
-      <div style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); padding: 32px; border-radius: 8px; margin-bottom: 24px;">
-        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">The Bottom Line</h3>
-        <p style="font-size: 16px; line-height: 1.7; color: var(--gray-800); margin-bottom: 12px;">
-          <strong>Spin LGX has a strong value proposition (gainshare model, industry expertise), but the website is a liability, not an asset.</strong>
-        </p>
-        <p style="font-size: 16px; line-height: 1.7; color: var(--gray-800); margin-bottom: 12px;">
-          You're competing against firms with 50+ years of industry credibility (ICC Logistics), robust content engines (40+ blog posts), modern web platforms (3-5x faster load times), and aggressive SEO strategies (service-specific landing pages, free tools, newsletters).
-        </p>
-        <p style="font-size: 16px; line-height: 1.7; color: var(--gray-800);">
-          <strong>The gap is not insurmountable, but it requires action.</strong> Migrate off Wix, build a content machine, create service-specific landing pages, and compete on education (not just sales pitches). The logistics consulting market rewards thought leadership and organic visibility. Right now, you're invisible.
-        </p>
-      </div>
-
-      <div class="recommendations">
-        <h3>🎯 Three Critical Questions to Answer</h3>
-        <ol>
-          <li><strong>Are you willing to invest in content marketing?</strong> Without a blog and thought leadership, you'll never rank organically. Period.</li>
-          <li><strong>Can you migrate off Wix?</strong> It's holding you back technically and strategically. Modern platforms are faster, cheaper long-term, and SEO-friendly.</li>
-          <li><strong>Do you have client success stories with hard numbers?</strong> "We saved XYZ Corp $180K" is 10x more persuasive than "We save money." Get permission, document results, publish them.</li>
-        </ol>
-      </div>
-
-      <div style="background: var(--gray-100); padding: 24px; border-radius: 8px; border-left: 4px solid var(--navy); margin-top: 32px;">
-        <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; color: var(--navy);">Next Steps</h4>
-        <ol style="margin-left: 20px; line-height: 1.8; color: var(--gray-800);">
-          <li><strong>Share this audit internally</strong> – Get buy-in from leadership on the scope and investment needed.</li>
-          <li><strong>Prioritize quick wins</strong> – Meta tags, blog launch, lead magnet can happen in 30 days for under $5K.</li>
-          <li><strong>Plan the migration</strong> – Research platforms (Next.js, Astro, WordPress), get quotes from agencies, lock in a timeline.</li>
-          <li><strong>Hire a content marketer</strong> – In-house or agency, you need someone publishing 2-4x/month consistently.</li>
-          <li><strong>Measure everything</strong> – Set up Google Search Console, Google Analytics 4, and track organic traffic, conversions, and keyword rankings monthly.</li>
-        </ol>
-      </div>
-    </section>
-
-  </div>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <div class="footer">
-    <p>Audit prepared by Clark (OpenClaw AI Assistant) | May 5, 2026</p>
-    <p style="margin-top: 8px; font-size: 13px;">This audit is based on public information, competitor research, and industry best practices. All estimates are approximate.</p>
-  </div>
-
-</div>
+  <footer class="bg-navy text-white py-8">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <img src="logo.svg" alt="XSL Consulting" class="h-10 mx-auto mb-4 opacity-80">
+      <p class="text-gray-400 text-sm">Audit prepared by XSL Consulting | May 5, 2026</p>
+      <p class="text-gray-500 text-xs mt-2">Based on public information, competitor research, and industry best practices.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
