@@ -303,8 +303,8 @@
   <div class="overall-score">
     <div class="score-card">
       <h3>Overall Score</h3>
-      <div class="score-value score-warning">48/100</div>
-      <div class="score-label">Needs Significant Improvement</div>
+      <div class="score-value score-critical">42/100</div>
+      <div class="score-label">Critical Issues</div>
     </div>
     <div class="score-card">
       <h3>Speed & Performance</h3>
@@ -318,8 +318,8 @@
     </div>
     <div class="score-card">
       <h3>Design/UX</h3>
-      <div class="score-value score-fair">65/100</div>
-      <div class="score-label">Acceptable</div>
+      <div class="score-value score-warning">38/100</div>
+      <div class="score-label">Poor User Experience</div>
     </div>
     <div class="score-card">
       <h3>Content Marketing</h3>
@@ -445,29 +445,51 @@
       </div>
 
       <div class="metric-grid">
-        <div class="metric good">
+        <div class="metric critical">
           <div class="metric-title">Visual Design</div>
-          <div class="metric-value">Clean</div>
-          <div class="metric-desc">Professional color scheme (navy, white), good contrast, modern layout.</div>
+          <div class="metric-value">Dated & Generic</div>
+          <div class="metric-desc">Stock Wix template with minimal customization. Looks like 100 other logistics sites. No brand personality.</div>
         </div>
-        <div class="metric good">
+        <div class="metric warning">
           <div class="metric-title">Mobile Responsive</div>
-          <div class="metric-value">Yes</div>
-          <div class="metric-desc">Wix handles responsive design automatically. Looks acceptable on mobile.</div>
+          <div class="metric-value">Functional But Poor</div>
+          <div class="metric-desc">Wix auto-responsive breaks layout hierarchy. Text too small, buttons hard to tap, images misaligned.</div>
         </div>
-        <div class="metric warning">
+        <div class="metric critical">
           <div class="metric-title">Call-to-Actions</div>
-          <div class="metric-value">Weak</div>
-          <div class="metric-desc">"Get in Touch" button is generic. No lead magnets, free audits, or value-driven CTAs.</div>
+          <div class="metric-value">Ineffective</div>
+          <div class="metric-desc">"Get in Touch" is passive and buried. No value proposition. Competitors use "Get Free Audit" or "Calculate Savings".</div>
+        </div>
+        <div class="metric critical">
+          <div class="metric-title">Trust Signals</div>
+          <div class="metric-value">Severely Lacking</div>
+          <div class="metric-desc">No client logos, no case study numbers, vague testimonials. Zero social proof to overcome skepticism.</div>
         </div>
         <div class="metric warning">
-          <div class="metric-title">Trust Signals</div>
-          <div class="metric-value">Limited</div>
-          <div class="metric-desc">Testimonials page exists but no client logos, case studies, or specific ROI proof.</div>
+          <div class="metric-title">Information Hierarchy</div>
+          <div class="metric-value">Confusing</div>
+          <div class="metric-desc">Homepage dumps all services in one scroll. No clear user journey or funnel. Visitors get lost.</div>
+        </div>
+        <div class="metric critical">
+          <div class="metric-title">Typography</div>
+          <div class="metric-value">Inconsistent</div>
+          <div class="metric-desc">Font sizes vary wildly, line heights are off, poor readability. Looks amateurish.</div>
         </div>
       </div>
 
       <ul class="issue-list">
+        <li class="issue-item critical">
+          <div class="issue-title">🚨 Homepage is a Wall of Text <span class="badge badge-critical">CRITICAL</span></div>
+          <div class="issue-desc">The homepage scrolls forever with dense paragraphs and no visual breaks. Users bounce within 5 seconds. Modern sites use hero sections, video, animations, and scannable content. This looks like a Word doc converted to HTML.</div>
+        </li>
+        <li class="issue-item critical">
+          <div class="issue-title">🚨 No Visual Hierarchy or Whitespace</div>
+          <div class="issue-desc">Everything is crammed together. No breathing room. Headings, body text, and CTAs all blur together. Competitors use strategic whitespace, bold headings, and color accents to guide the eye. This is overwhelming and hard to parse.</div>
+        </li>
+        <li class="issue-item critical">
+          <div class="issue-title">🚨 Stock Photography Overload</div>
+          <div class="issue-desc">Generic shipping truck images that scream "Wix template". No custom graphics, no team photos, no personality. Every competitor uses the same stock images. You look indistinguishable.</div>
+        </li>
         <li class="issue-item warning">
           <div class="issue-title">⚠️ No Lead Magnet or Free Offer</div>
           <div class="issue-desc">ICC Logistics offers free assessments, whitepapers, and rate comparison charts. You have a contact form. There's no incentive to engage before the sale.</div>
@@ -475,6 +497,14 @@
         <li class="issue-item warning">
           <div class="issue-title">⚠️ Testimonials Lack Specificity</div>
           <div class="issue-desc">Testimonials should include company names, logos, and quantified results ("saved $120K in first year"). Generic praise doesn't convert skeptics.</div>
+        </li>
+        <li class="issue-item warning">
+          <div class="issue-title">⚠️ Navigation is Confusing</div>
+          <div class="issue-desc">5 pages but no clear value ladder. "Gainshare Agreement" is buried in nav when it should be the hero message. Services page lists everything but highlights nothing.</div>
+        </li>
+        <li class="issue-item warning">
+          <div class="issue-title">⚠️ No Interactive Elements</div>
+          <div class="issue-desc">Zero calculators, quizzes, ROI estimators, or engagement tools. Just static text. Competitors use interactive tools to capture emails and demonstrate value instantly.</div>
         </li>
         <li class="issue-item info">
           <div class="issue-title">ℹ️ Footer Social Links Same as Header</div>
@@ -739,58 +769,409 @@
       </div>
     </section>
 
-    <!-- Investment Estimate -->
+    <!-- Detailed Pricing Breakdown -->
     <section class="section">
       <div class="section-header">
         <div class="section-icon">💰</div>
-        <h2>Investment Estimate</h2>
+        <h2>Detailed Pricing & Scope of Work</h2>
       </div>
 
-      <table class="competitor-table">
-        <thead>
-          <tr>
-            <th>Phase</th>
-            <th>Scope</th>
-            <th>Timeline</th>
-            <th>Estimated Cost</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="company-name">Quick Wins</td>
-            <td>Meta tags, blog setup, lead magnet</td>
-            <td>0-30 days</td>
-            <td>$2,000 - $5,000</td>
-          </tr>
-          <tr>
-            <td class="company-name">Platform Migration</td>
-            <td>Rebuild on Next.js/Astro, content migration</td>
-            <td>30-90 days</td>
-            <td>$15,000 - $30,000</td>
-          </tr>
-          <tr>
-            <td class="company-name">Content Production</td>
-            <td>Blog posts (2-4/month), landing pages, case studies</td>
-            <td>Ongoing</td>
-            <td>$3,000 - $6,000/month</td>
-          </tr>
-          <tr>
-            <td class="company-name">SEO & Analytics</td>
-            <td>Keyword research, link building, tracking setup</td>
-            <td>Ongoing</td>
-            <td>$2,000 - $4,000/month</td>
-          </tr>
-          <tr>
-            <td class="company-name"><strong>Total (Year 1)</strong></td>
-            <td colspan="2"><strong>Full rebuild + 12 months content/SEO</strong></td>
-            <td><strong>$75,000 - $140,000</strong></td>
-          </tr>
-        </tbody>
-      </table>
+      <div style="background: var(--gray-100); padding: 24px; border-radius: 8px; margin-bottom: 32px; border-left: 4px solid var(--navy);">
+        <p style="font-size: 16px; line-height: 1.7; color: var(--gray-800);">
+          <strong>Pricing Model:</strong> All estimates based on <strong>$150/hour</strong> professional services rate. Each tier includes itemized hours, deliverables, and timeline. Choose the package that aligns with your budget and urgency.
+        </p>
+      </div>
 
-      <p style="margin-top: 20px; color: var(--gray-700); line-height: 1.7;">
-        <strong>ROI Justification:</strong> If your average client is worth $50K-$200K in lifetime value, capturing just 2-3 additional clients per year via organic search pays for the entire investment. Competitors with strong content marketing report 40-60% of new business coming from organic search.
-      </p>
+      <!-- Tier 1: Quick Fixes -->
+      <div style="background: white; border-radius: 8px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); border: 2px solid var(--green);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <h3 style="font-size: 24px; font-weight: 700; color: var(--navy);">Tier 1: Quick Fixes & SEO Essentials</h3>
+          <div style="text-align: right;">
+            <div style="font-size: 32px; font-weight: 800; color: var(--green);">$3,000</div>
+            <div style="font-size: 14px; color: var(--gray-600);">20 hours</div>
+          </div>
+        </div>
+        <div style="background: #F0FDF4; padding: 16px; border-radius: 6px; margin-bottom: 20px;">
+          <strong style="color: var(--green);">✅ Best For:</strong> Immediate improvements without a full rebuild. Fix critical SEO issues and launch basic content strategy.
+        </div>
+        <table class="competitor-table">
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Hours</th>
+              <th>Cost</th>
+              <th>Deliverable</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SEO Audit & Meta Tag Optimization</td>
+              <td>4</td>
+              <td>$600</td>
+              <td>Fix all title tags, meta descriptions, H1 tags on 5 pages</td>
+            </tr>
+            <tr>
+              <td>Homepage Content Rewrite</td>
+              <td>3</td>
+              <td>$450</td>
+              <td>Rewrite hero section, value prop, scannable bullets</td>
+            </tr>
+            <tr>
+              <td>Blog Setup (Wix native)</td>
+              <td>2</td>
+              <td>$300</td>
+              <td>Configure blog, design template, RSS feed</td>
+            </tr>
+            <tr>
+              <td>First 3 Blog Posts</td>
+              <td>6</td>
+              <td>$900</td>
+              <td>800-1200 word SEO-optimized articles (topics: UPS contracts, LTL auditing, parcel fees)</td>
+            </tr>
+            <tr>
+              <td>Lead Magnet Creation</td>
+              <td>3</td>
+              <td>$450</td>
+              <td>Downloadable PDF guide: "LTL Contract Negotiation Checklist"</td>
+            </tr>
+            <tr>
+              <td>Google Analytics 4 + Search Console Setup</td>
+              <td>2</td>
+              <td>$300</td>
+              <td>Tracking, conversion events, goal setup, baseline report</td>
+            </tr>
+            <tr>
+              <td class="company-name"><strong>TOTAL</strong></td>
+              <td><strong>20</strong></td>
+              <td><strong>$3,000</strong></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="margin-top: 16px; padding: 12px; background: var(--gray-50); border-radius: 6px;">
+          <strong>Timeline:</strong> 2-3 weeks | <strong>Outcome:</strong> SEO score improves 42 → 60, first blog posts live, basic lead capture active
+        </div>
+      </div>
+
+      <!-- Tier 2: Platform Migration + Redesign -->
+      <div style="background: white; border-radius: 8px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); border: 2px solid var(--blue);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <h3 style="font-size: 24px; font-weight: 700; color: var(--navy);">Tier 2: Modern Platform Migration & UX Overhaul</h3>
+          <div style="text-align: right;">
+            <div style="font-size: 32px; font-weight: 800; color: var(--blue);">$18,000</div>
+            <div style="font-size: 14px; color: var(--gray-600);">120 hours</div>
+          </div>
+        </div>
+        <div style="background: #DBEAFE; padding: 16px; border-radius: 6px; margin-bottom: 20px;">
+          <strong style="color: var(--blue);">🚀 Best For:</strong> Serious about competing. Migrate off Wix, modern design, fast performance, built for growth.
+        </div>
+        <table class="competitor-table">
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Hours</th>
+              <th>Cost</th>
+              <th>Deliverable</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Platform Selection & Architecture Planning</td>
+              <td>6</td>
+              <td>$900</td>
+              <td>Recommend Next.js vs Astro vs Headless WP, define tech stack</td>
+            </tr>
+            <tr>
+              <td>Custom Design (Figma)</td>
+              <td>20</td>
+              <td>$3,000</td>
+              <td>Homepage, 6 service pages, blog template, mobile + desktop</td>
+            </tr>
+            <tr>
+              <td>Frontend Development (Next.js + Tailwind)</td>
+              <td>40</td>
+              <td>$6,000</td>
+              <td>Responsive build, animations, optimized images, schema markup</td>
+            </tr>
+            <tr>
+              <td>Content Migration & Rewrite</td>
+              <td>10</td>
+              <td>$1,500</td>
+              <td>Migrate + improve all existing content, add CTAs, trust signals</td>
+            </tr>
+            <tr>
+              <td>SEO Implementation</td>
+              <td>8</td>
+              <td>$1,200</td>
+              <td>Structured data, sitemap, robots.txt, meta optimization, redirects</td>
+            </tr>
+            <tr>
+              <td>6 Service-Specific Landing Pages</td>
+              <td>18</td>
+              <td>$2,700</td>
+              <td>Dedicated pages for each service with unique content, testimonials, CTAs</td>
+            </tr>
+            <tr>
+              <td>Blog Setup + CMS Integration</td>
+              <td>6</td>
+              <td>$900</td>
+              <td>Markdown-based CMS or Sanity, category structure, author profiles</td>
+            </tr>
+            <tr>
+              <td>Analytics, Heatmaps, Conversion Tracking</td>
+              <td>4</td>
+              <td>$600</td>
+              <td>GA4, Hotjar, form tracking, event setup</td>
+            </tr>
+            <tr>
+              <td>Deployment + Hosting Setup</td>
+              <td>4</td>
+              <td>$600</td>
+              <td>Vercel/Cloudflare Pages, CI/CD, SSL, DNS migration</td>
+            </tr>
+            <tr>
+              <td>QA & Launch Support</td>
+              <td>4</td>
+              <td>$600</td>
+              <td>Cross-browser testing, mobile QA, fix bugs, go-live checklist</td>
+            </tr>
+            <tr>
+              <td class="company-name"><strong>TOTAL</strong></td>
+              <td><strong>120</strong></td>
+              <td><strong>$18,000</strong></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="margin-top: 16px; padding: 12px; background: var(--gray-50); border-radius: 6px;">
+          <strong>Timeline:</strong> 6-8 weeks | <strong>Outcome:</strong> Modern, fast site (load &lt;1s), SEO score → 75+, ready to rank
+        </div>
+      </div>
+
+      <!-- Tier 3: Full Digital Transformation -->
+      <div style="background: white; border-radius: 8px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); border: 2px solid var(--navy);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <h3 style="font-size: 24px; font-weight: 700; color: var(--navy);">Tier 3: Full Digital Transformation (Rebuild + 6 Months Content)</h3>
+          <div style="text-align: right;">
+            <div style="font-size: 32px; font-weight: 800; color: var(--navy);">$48,000</div>
+            <div style="font-size: 14px; color: var(--gray-600);">320 hours total</div>
+          </div>
+        </div>
+        <div style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); padding: 16px; border-radius: 6px; margin-bottom: 20px;">
+          <strong style="color: var(--gray-900);">🏆 Best For:</strong> Complete overhaul + aggressive content marketing. Catch up to competitors in 6 months instead of 2 years.
+        </div>
+        <p style="margin-bottom: 20px; color: var(--gray-700); line-height: 1.7;">
+          <strong>Includes everything in Tier 2, plus:</strong>
+        </p>
+        <table class="competitor-table">
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Hours</th>
+              <th>Cost</th>
+              <th>Deliverable</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="4" style="background: var(--gray-100); font-weight: 600;">INCLUDED: Tier 2 (Platform Migration + Redesign)</td>
+            </tr>
+            <tr>
+              <td>Tier 2 Deliverables</td>
+              <td>120</td>
+              <td>$18,000</td>
+              <td>See Tier 2 breakdown above</td>
+            </tr>
+            <tr>
+              <td colspan="4" style="background: var(--gray-100); font-weight: 600;">ADDITIONAL: 6 Months Content Marketing</td>
+            </tr>
+            <tr>
+              <td>Keyword Research & Content Strategy</td>
+              <td>12</td>
+              <td>$1,800</td>
+              <td>50+ target keywords, editorial calendar, topic clusters</td>
+            </tr>
+            <tr>
+              <td>Blog Content (4 posts/month × 6 months)</td>
+              <td>96</td>
+              <td>$14,400</td>
+              <td>24 SEO-optimized articles (1000-1500 words each)</td>
+            </tr>
+            <tr>
+              <td>3 Detailed Case Studies</td>
+              <td>18</td>
+              <td>$2,700</td>
+              <td>Client success stories with real ROI numbers, before/after data</td>
+            </tr>
+            <tr>
+              <td>Lead Magnet Content (3 pieces)</td>
+              <td>15</td>
+              <td>$2,250</td>
+              <td>Ultimate guides, checklists, calculators (downloadable PDFs)</td>
+            </tr>
+            <tr>
+              <td>Monthly Newsletter Setup + 6 Editions</td>
+              <td>18</td>
+              <td>$2,700</td>
+              <td>Email template design, Mailchimp setup, 6 months content</td>
+            </tr>
+            <tr>
+              <td>SEO Optimization & Link Building</td>
+              <td>24</td>
+              <td>$3,600</td>
+              <td>Internal linking, guest post outreach, directory submissions</td>
+            </tr>
+            <tr>
+              <td>Monthly Performance Reports</td>
+              <td>12</td>
+              <td>$1,800</td>
+              <td>Traffic, rankings, conversions, recommendations (6 months)</td>
+            </tr>
+            <tr>
+              <td>Interactive ROI Calculator Development</td>
+              <td>5</td>
+              <td>$750</td>
+              <td>Custom shipping cost calculator widget for lead gen</td>
+            </tr>
+            <tr>
+              <td class="company-name"><strong>TOTAL</strong></td>
+              <td><strong>320</strong></td>
+              <td><strong>$48,000</strong></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="margin-top: 16px; padding: 12px; background: var(--gray-50); border-radius: 6px;">
+          <strong>Timeline:</strong> 6 months end-to-end | <strong>Outcome:</strong> 24+ blog posts live, SEO score → 85+, organic traffic up 200-400%, email list growing
+        </div>
+      </div>
+
+      <!-- Ongoing Monthly Retainer -->
+      <div style="background: white; border-radius: 8px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); border: 2px solid var(--teal);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <h3 style="font-size: 24px; font-weight: 700; color: var(--navy);">Ongoing Retainer: Monthly Content & SEO</h3>
+          <div style="text-align: right;">
+            <div style="font-size: 32px; font-weight: 800; color: var(--teal);">$4,500/mo</div>
+            <div style="font-size: 14px; color: var(--gray-600);">30 hours/month</div>
+          </div>
+        </div>
+        <div style="background: #F0FDFA; padding: 16px; border-radius: 6px; margin-bottom: 20px;">
+          <strong style="color: var(--teal);">📈 Best For:</strong> After initial build (Tier 2 or 3), maintain momentum with consistent content production and SEO.
+        </div>
+        <table class="competitor-table">
+          <thead>
+            <tr>
+              <th>Monthly Deliverables</th>
+              <th>Hours</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>4 Blog Posts (800-1200 words, SEO-optimized)</td>
+              <td>16</td>
+              <td>$2,400</td>
+            </tr>
+            <tr>
+              <td>1 Newsletter Edition (write + send)</td>
+              <td>3</td>
+              <td>$450</td>
+            </tr>
+            <tr>
+              <td>SEO Maintenance (link building, keyword monitoring)</td>
+              <td>4</td>
+              <td>$600</td>
+            </tr>
+            <tr>
+              <td>Social Media Content (LinkedIn posts, repurpose blog)</td>
+              <td>4</td>
+              <td>$600</td>
+            </tr>
+            <tr>
+              <td>Monthly Analytics Report + Strategy Call</td>
+              <td>3</td>
+              <td>$450</td>
+            </tr>
+            <tr>
+              <td class="company-name"><strong>MONTHLY TOTAL</strong></td>
+              <td><strong>30</strong></td>
+              <td><strong>$4,500</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="margin-top: 16px; padding: 12px; background: var(--gray-50); border-radius: 6px;">
+          <strong>Contract:</strong> 6-month minimum, then month-to-month | <strong>Outcome:</strong> 48 blog posts/year, steady traffic growth, sustained rankings
+        </div>
+      </div>
+
+      <!-- À La Carte Options -->
+      <div style="background: var(--gray-50); border-radius: 8px; padding: 24px; margin-bottom: 24px;">
+        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--navy);">À La Carte Add-Ons</h3>
+        <table class="competitor-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Hours</th>
+              <th>Cost</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Video Production (Service Explainer)</td>
+              <td>N/A</td>
+              <td>$2,500</td>
+              <td>Script, shoot, edit 90-second service video (outsourced)</td>
+            </tr>
+            <tr>
+              <td>Client Testimonial Video (3 videos)</td>
+              <td>N/A</td>
+              <td>$3,500</td>
+              <td>Coordinate, shoot, edit 3 client testimonials</td>
+            </tr>
+            <tr>
+              <td>Advanced Interactive Calculator</td>
+              <td>12</td>
+              <td>$1,800</td>
+              <td>Custom freight cost calculator with email capture</td>
+            </tr>
+            <tr>
+              <td>LinkedIn Company Page Overhaul</td>
+              <td>6</td>
+              <td>$900</td>
+              <td>Optimize profile, create content calendar, first month posts</td>
+            </tr>
+            <tr>
+              <td>Google Ads Setup (PPC Campaign)</td>
+              <td>10</td>
+              <td>$1,500</td>
+              <td>Keyword research, ad copy, landing page optimization, tracking setup</td>
+            </tr>
+            <tr>
+              <td>Competitor Deep-Dive Analysis</td>
+              <td>8</td>
+              <td>$1,200</td>
+              <td>Detailed report on 5 competitors (keywords, backlinks, content gaps)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ROI Justification -->
+      <div class="recommendations">
+        <h3>💡 ROI Justification: Why This Investment Makes Sense</h3>
+        <ol>
+          <li><strong>Average logistics consulting client lifetime value:</strong> $50K-$200K (based on industry norms).</li>
+          <li><strong>Organic search conversion rate:</strong> B2B logistics averages 2-5% (versus 0.5-1% for paid ads).</li>
+          <li><strong>Time to payback:</strong> If Tier 3 ($48K) generates just 2 new clients in year 1, you've broken even. Year 2+ is pure profit.</li>
+          <li><strong>Competitor data:</strong> ICC Logistics reports 40-60% of new business from organic search. You're currently at ~0%.</li>
+          <li><strong>Compounding returns:</strong> Content marketing builds equity. Blog posts rank for years. Email lists grow monthly. SEO improves over time.</li>
+        </ol>
+        <p style="margin-top: 16px; font-size: 16px; line-height: 1.7;">
+          <strong>Bottom line:</strong> Spin LGX has a differentiated value prop (gainshare model), but the website is actively losing you business. Investing $18K-$48K to fix it is not an expense—it's growth infrastructure. The only question is how fast you want to catch up to competitors who've been publishing content for 5+ years.
+        </p>
+      </div>
+
     </section>
 
     <!-- Final Summary -->
