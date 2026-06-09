@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpinLGX Redesign Report - June 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-stone-50 text-gray-900">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-200">
+    <div class="max-w-5xl mx-auto px-6 py-6">
+      <h1 class="text-2xl font-bold text-gray-900">SpinLGX Redesign Report</h1>
+      <p class="text-gray-600 text-sm mt-1">Old site (Wix, May 2026) vs. New site (WordPress, June 2026)</p>
+    </div>
+  </header>
+
+  <!-- Summary Cards -->
+  <section class="max-w-5xl mx-auto px-6 py-10">
+    <div class="grid md:grid-cols-2 gap-8">
+      
+      <!-- Old Site Card -->
+      <div class="bg-white border border-gray-200 rounded-lg p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-lg font-semibold text-gray-900">Old Site (Wix)</h2>
+          <span class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded font-medium">CRITICAL</span>
+        </div>
+        
+        <div class="mb-6">
+          <div class="text-5xl font-bold text-red-600 mb-1">42</div>
+          <p class="text-sm text-gray-600">Overall Score</p>
+        </div>
+
+        <div class="space-y-3 border-t border-gray-200 pt-4">
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-700">Speed</span>
+            <span class="text-lg font-semibold text-red-600">35</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-700">SEO</span>
+            <span class="text-lg font-semibold text-orange-600">42</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-700">Design</span>
+            <span class="text-lg font-semibold text-orange-600">38</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-700">Content</span>
+            <span class="text-lg font-semibold text-red-600">10</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- New Site Card -->
+      <div class="bg-white border border-gray-200 rounded-lg p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-lg font-semibold text-gray-900">New Site (WordPress)</h2>
+          <span class="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded font-medium">FAIR</span>
+        </div>
+        
+        <div class="mb-6">
+          <div class="text-5xl font-bold text-yellow-600 mb-1">~58</div>
+          <p class="text-sm text-gray-600">Overall Score (est.)</p>
+        </div>
+
+        <div class="space-y-3 border-t border-gray-200 pt-4">
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-700">Speed</span>
+            <div class="flex items-center gap-2">
+              <span class="text-lg font-semibold text-green-600">~68</span>
+              <span class="text-xs text-green-600 font-medium">+33</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-700">SEO</span>
+            <div class="flex items-center gap-2">
+              <span class="text-lg font-semibold text-orange-500">~47</span>
+              <span class="text-xs text-gray-500">+5</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-700">Design</span>
+            <div class="flex items-center gap-2">
+              <span class="text-lg font-semibold text-yellow-600">~53</span>
+              <span class="text-xs text-yellow-600 font-medium">+15</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-700">Content</span>
+            <div class="flex items-center gap-2">
+              <span class="text-lg font-semibold text-yellow-600">~43</span>
+              <span class="text-xs text-green-600 font-medium">+33</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Quick Take -->
+    <div class="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+      <h3 class="font-semibold text-gray-900 mb-2">Quick take</h3>
+      <p class="text-gray-700 leading-relaxed">
+        Moving from Wix to WordPress cut page weight by 87% (662KB → 81KB) and likely improved load times. 
+        More content on the homepage is good. But critical SEO stuff—meta description, proper title tag, Open Graph—is still missing. 
+        And the copy has that AI-generated feel: lots of "seamless," "leverage," "unlock" language.
+      </p>
+    </div>
+  </section>
+
+  <!-- Detailed Breakdown -->
+  <section class="max-w-5xl mx-auto px-6 py-10 border-t border-gray-200">
+    <h2 class="text-xl font-bold text-gray-900 mb-6">What changed</h2>
+
+    <div class="space-y-8">
+      
+      <!-- SEO -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">SEO & Meta</h3>
+        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-50 border-b border-gray-200">
+              <tr>
+                <th class="px-4 py-3 text-left font-medium text-gray-700">Item</th>
+                <th class="px-4 py-3 text-left font-medium text-gray-700">Old</th>
+                <th class="px-4 py-3 text-left font-medium text-gray-700">New</th>
+                <th class="px-4 py-3 text-left font-medium text-gray-700">Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="px-4 py-3 text-gray-700">Title tag</td>
+                <td class="px-4 py-3 text-gray-500">Generic / unknown</td>
+                <td class="px-4 py-3">"SpinLGX" (7 chars)</td>
+                <td class="px-4 py-3">
+                  <span class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded">Too short</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-gray-700">Meta description</td>
+                <td class="px-4 py-3 text-red-600 font-medium">Missing</td>
+                <td class="px-4 py-3 text-red-600 font-medium">Still missing</td>
+                <td class="px-4 py-3">
+                  <span class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded">No change</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-gray-700">H1 tags</td>
+                <td class="px-4 py-3 text-gray-500">Multiple (likely)</td>
+                <td class="px-4 py-3 text-green-600 font-medium">1 (correct)</td>
+                <td class="px-4 py-3">
+                  <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Fixed</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-gray-700">Canonical URL</td>
+                <td class="px-4 py-3 text-gray-500">Unknown</td>
+                <td class="px-4 py-3 text-green-600 font-medium">Present</td>
+                <td class="px-4 py-3">
+                  <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Added</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-gray-700">Open Graph tags</td>
+                <td class="px-4 py-3 text-gray-500">Unknown</td>
+                <td class="px-4 py-3 text-red-600 font-medium">Missing</td>
+                <td class="px-4 py-3">
+                  <span class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded">Not added</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Performance -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">Performance</h3>
+        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-50 border-b border-gray-200">
+              <tr>
+                <th class="px-4 py-3 text-left font-medium text-gray-700">Item</th>
+                <th class="px-4 py-3 text-left font-medium text-gray-700">Old</th>
+                <th class="px-4 py-3 text-left font-medium text-gray-700">New</th>
+                <th class="px-4 py-3 text-left font-medium text-gray-700">Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="px-4 py-3 text-gray-700">Page size</td>
+                <td class="px-4 py-3 text-red-600 font-medium">662 KB</td>
+                <td class="px-4 py-3 text-green-600 font-medium">81 KB</td>
+                <td class="px-4 py-3">
+                  <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">-87% (huge win)</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-gray-700">Platform</td>
+                <td class="px-4 py-3">Wix (bloated)</td>
+                <td class="px-4 py-3 text-green-600">WordPress (Gutenberg)</td>
+                <td class="px-4 py-3">
+                  <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Better</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-gray-700">Inline styles</td>
+                <td class="px-4 py-3">Heavy (Wix)</td>
+                <td class="px-4 py-3">12 inline styles</td>
+                <td class="px-4 py-3">
+                  <span class="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded">Moderate</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">Content</h3>
+        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-50 border-b border-gray-200">
+              <tr>
+                <th class="px-4 py-3 text-left font-medium text-gray-700">Item</th>
+                <th class="px-4 py-3 text-left font-medium text-gray-700">Old</th>
+                <th class="px-4 py-3 text-left font-medium text-gray-700">New</th>
+                <th class="px-4 py-3 text-left font-medium text-gray-700">Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="px-4 py-3 text-gray-700">Homepage words</td>
+                <td class="px-4 py-3 text-red-600">Minimal</td>
+                <td class="px-4 py-3 text-green-600 font-medium">~1,744 words</td>
+                <td class="px-4 py-3">
+                  <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">More content</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-gray-700">Blog / resources</td>
+                <td class="px-4 py-3 text-red-600 font-medium">None (scored 10/100)</td>
+                <td class="px-4 py-3 text-gray-500">Unknown</td>
+                <td class="px-4 py-3">
+                  <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Need to check</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-gray-700">AI buzzwords</td>
+                <td class="px-4 py-3 text-gray-500">N/A</td>
+                <td class="px-4 py-3">
+                  <div class="text-yellow-600 font-medium">6 detected:</div>
+                  <div class="text-xs text-gray-600 mt-1">seamless (2×), leverage, unlock, streamline, optimize</div>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded">Concern</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Design -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">Design & UX</h3>
+        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-50 border-b border-gray-200">
+              <tr>
+                <th class="px-4 py-3 text-left font-medium text-gray-700">Item</th>
+                <th class="px-4 py-3 text-left font-medium text-gray-700">Old</th>
+                <th class="px-4 py-3 text-left font-medium text-gray-700">New</th>
+                <th class="px-4 py-3 text-left font-medium text-gray-700">Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="px-4 py-3 text-gray-700">Hero section</td>
+                <td class="px-4 py-3 text-green-600">Present</td>
+                <td class="px-4 py-3 text-green-600">Present</td>
+                <td class="px-4 py-3">
+                  <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Good</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-gray-700">CTA buttons</td>
+                <td class="px-4 py-3">Weak (per audit)</td>
+                <td class="px-4 py-3 text-green-600 font-medium">44 mentions</td>
+                <td class="px-4 py-3">
+                  <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Better</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-gray-700">Forms (homepage)</td>
+                <td class="px-4 py-3">Present</td>
+                <td class="px-4 py-3 text-red-600 font-medium">0 detected</td>
+                <td class="px-4 py-3">
+                  <span class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded">Missing</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Problems -->
+  <section class="max-w-5xl mx-auto px-6 py-10 border-t border-gray-200">
+    <h2 class="text-xl font-bold text-gray-900 mb-6">Biggest problems</h2>
+
+    <div class="space-y-4">
+      
+      <div class="bg-white border border-red-200 rounded-lg p-5">
+        <div class="flex items-start gap-3">
+          <span class="text-red-600 font-bold text-lg">1.</span>
+          <div class="flex-1">
+            <h3 class="font-semibold text-gray-900 mb-1">Meta description still missing</h3>
+            <p class="text-sm text-gray-700 mb-3">
+              Google writes its own snippet when you don't provide one, and it's usually bad. This directly hurts click-through rates from search results.
+            </p>
+            <div class="bg-gray-50 border border-gray-200 rounded p-3 text-sm">
+              <p class="text-gray-600 mb-1 font-medium">Recommendation:</p>
+              <p class="text-gray-800 italic">"SpinLGX delivers logistics intelligence through AI-powered contract optimization, freight audits, and supply chain consulting. Save millions on transportation costs."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-orange-200 rounded-lg p-5">
+        <div class="flex items-start gap-3">
+          <span class="text-orange-600 font-bold text-lg">2.</span>
+          <div class="flex-1">
+            <h3 class="font-semibold text-gray-900 mb-1">Title tag is too short</h3>
+            <p class="text-sm text-gray-700 mb-2">
+              Current: "SpinLGX" (7 chars). Doesn't include keywords or value prop.
+            </p>
+            <div class="bg-gray-50 border border-gray-200 rounded p-3 text-sm">
+              <p class="text-gray-600 mb-1 font-medium">Try:</p>
+              <p class="text-gray-800 italic">"SpinLGX | Logistics Contract Optimization & Freight Audit Services"</p>
+              <p class="text-xs text-gray-500 mt-1">(62 chars, includes primary keywords)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-red-200 rounded-lg p-5">
+        <div class="flex items-start gap-3">
+          <span class="text-red-600 font-bold text-lg">3.</span>
+          <div class="flex-1">
+            <h3 class="font-semibold text-gray-900 mb-1">No Open Graph tags</h3>
+            <p class="text-sm text-gray-700">
+              When shared on LinkedIn, Facebook, or Twitter, the site won't display properly—no preview image, no description. Makes it look unprofessional.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-yellow-200 rounded-lg p-5">
+        <div class="flex items-start gap-3">
+          <span class="text-yellow-600 font-bold text-lg">4.</span>
+          <div class="flex-1">
+            <h3 class="font-semibold text-gray-900 mb-1">AI-generated content (likely)</h3>
+            <p class="text-sm text-gray-700 mb-2">
+              Detected buzzwords: seamless (2×), leverage, unlock, streamline, optimize. These are telltale signs of AI-written copy that hasn't been humanized.
+            </p>
+            <p class="text-sm text-gray-600">
+              Replace with specific outcomes: "Clients saved $2.4M in 2025" instead of "seamless optimization."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-red-200 rounded-lg p-5">
+        <div class="flex items-start gap-3">
+          <span class="text-red-600 font-bold text-lg">5.</span>
+          <div class="flex-1">
+            <h3 class="font-semibold text-gray-900 mb-1">No forms on homepage</h3>
+            <p class="text-sm text-gray-700">
+              No clear conversion path. Visitors can't contact you or request a quote without hunting around. Add a contact form or prominent CTA button to a contact/quote page.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Competitor Context -->
+  <section class="max-w-5xl mx-auto px-6 py-10 border-t border-gray-200">
+    <h2 class="text-xl font-bold text-gray-900 mb-6">Where competitors are beating you</h2>
+
+    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+      <table class="w-full text-sm">
+        <thead class="bg-gray-50 border-b border-gray-200">
+          <tr>
+            <th class="px-4 py-3 text-left font-medium text-gray-700">Competitor</th>
+            <th class="px-4 py-3 text-left font-medium text-gray-700">Blog/Content</th>
+            <th class="px-4 py-3 text-left font-medium text-gray-700">SEO Score</th>
+            <th class="px-4 py-3 text-left font-medium text-gray-700">Platform</th>
+            <th class="px-4 py-3 text-left font-medium text-gray-700">Key Edge</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          <tr class="bg-red-50">
+            <td class="px-4 py-3 font-semibold">SpinLGX (new)</td>
+            <td class="px-4 py-3 text-gray-500">Unknown</td>
+            <td class="px-4 py-3">~47</td>
+            <td class="px-4 py-3">WordPress</td>
+            <td class="px-4 py-3">Gainshare model</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-medium">ICC Logistics</td>
+            <td class="px-4 py-3 text-green-700 font-medium">40+ posts</td>
+            <td class="px-4 py-3 font-semibold">88</td>
+            <td class="px-4 py-3">Custom (WordPress)</td>
+            <td class="px-4 py-3 text-sm">50 years experience, thought leadership, free audits</td>
+          </tr>
+          <tr class="bg-gray-50">
+            <td class="px-4 py-3 font-medium">Broussard Logistics</td>
+            <td class="px-4 py-3 text-green-700 font-medium">Active blog</td>
+            <td class="px-4 py-3 font-semibold">72</td>
+            <td class="px-4 py-3">Custom</td>
+            <td class="px-4 py-3 text-sm">LTL-focused, benchmarking tools</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-medium">AFMS</td>
+            <td class="px-4 py-3 text-green-700 font-medium">Resources</td>
+            <td class="px-4 py-3 font-semibold">76</td>
+            <td class="px-4 py-3">Custom</td>
+            <td class="px-4 py-3 text-sm">500+ years combined carrier exec experience</td>
+          </tr>
+          <tr class="bg-gray-50">
+            <td class="px-4 py-3 font-medium">Intune Logistics</td>
+            <td class="px-4 py-3 text-green-700 font-medium">Case studies</td>
+            <td class="px-4 py-3 font-semibold">68</td>
+            <td class="px-4 py-3">Custom</td>
+            <td class="px-4 py-3 text-sm">Automated freight audit software</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-medium">Shipware</td>
+            <td class="px-4 py-3 text-green-700 font-medium">Resources</td>
+            <td class="px-4 py-3 font-semibold">81</td>
+            <td class="px-4 py-3">Custom</td>
+            <td class="px-4 py-3 text-sm">Former UPS/FedEx pricing analysts, 21.5% avg savings</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-6 bg-yellow-50 border border-yellow-200 rounded-lg p-5">
+      <h3 class="font-semibold text-gray-900 mb-3">What this means</h3>
+      <ul class="space-y-2 text-sm text-gray-700">
+        <li><strong>ICC Logistics dominates search</strong> with 40+ blog posts. They own organic traffic.</li>
+        <li><strong>Shipware advertises "21.5% avg savings"</strong> prominently. You should highlight your results too.</li>
+        <li><strong>Every competitor has a content engine.</strong> Blog posts, whitepapers, case studies. Content = the new sales team.</li>
+        <li><strong>Your gainshare model is unique</strong>—but it's buried. Lead with it.</li>
+        <li><strong>Free tools = lead magnets.</strong> ICC offers rate charts, Shipware has a calculator. You need something similar.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- What to do -->
+  <section class="max-w-5xl mx-auto px-6 py-10 border-t border-gray-200">
+    <h2 class="text-xl font-bold text-gray-900 mb-6">What to do next</h2>
+
+    <div class="space-y-6">
+      
+      <div>
+        <h3 class="font-semibold text-gray-900 mb-2">This week</h3>
+        <ul class="space-y-1 text-sm text-gray-700">
+          <li>1. Add meta description (150-160 chars, keyword-rich)</li>
+          <li>2. Expand title tag to include keywords + value prop</li>
+          <li>3. Add Open Graph tags (for social sharing)</li>
+          <li>4. Add contact form to homepage or clear CTA to contact page</li>
+          <li>5. Review and humanize AI content (remove buzzwords, add specifics)</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-gray-900 mb-2">This month</h3>
+        <ul class="space-y-1 text-sm text-gray-700">
+          <li>• Run Lighthouse audit to confirm speed improvements</li>
+          <li>• Add structured data (JSON-LD schema for Organization, Service, Reviews)</li>
+          <li>• Implement lead magnet (e.g., "Free Freight Audit Checklist")</li>
+          <li>• Add testimonials/case studies with real numbers</li>
+          <li>• Create 2-3 foundational blog posts</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-gray-900 mb-2">This quarter</h3>
+        <ul class="space-y-1 text-sm text-gray-700">
+          <li>• Content marketing plan (1-2 blog posts/month)</li>
+          <li>• Competitor content gap analysis</li>
+          <li>• Backlink outreach (industry directories, partners)</li>
+          <li>• Conversion rate optimization (A/B test CTAs, forms, headlines)</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Deep Dive: Performance -->
+  <section class="max-w-5xl mx-auto px-6 py-10 border-t border-gray-200">
+    <h2 class="text-xl font-bold text-gray-900 mb-6">Performance deep dive</h2>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+      <div class="bg-white border border-gray-200 rounded-lg p-5">
+        <h3 class="text-sm font-semibold text-gray-600 uppercase mb-2">Page size</h3>
+        <div class="space-y-2">
+          <div>
+            <div class="text-xs text-gray-500 mb-1">Old (Wix)</div>
+            <div class="text-2xl font-bold text-red-600">662 KB</div>
+          </div>
+          <div>
+            <div class="text-xs text-gray-500 mb-1">New (WordPress)</div>
+            <div class="text-2xl font-bold text-green-600">81 KB</div>
+          </div>
+        </div>
+        <div class="mt-3 pt-3 border-t border-gray-200">
+          <div class="text-sm font-semibold text-green-700">-87% reduction</div>
+          <p class="text-xs text-gray-600 mt-1">Huge win. Wix bloat included 400KB of overhead. WordPress is much cleaner.</p>
+        </div>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-lg p-5">
+        <h3 class="text-sm font-semibold text-gray-600 uppercase mb-2">Platform</h3>
+        <div class="space-y-2">
+          <div>
+            <div class="text-xs text-gray-500 mb-1">Old</div>
+            <div class="text-lg font-semibold text-red-600">Wix</div>
+          </div>
+          <div>
+            <div class="text-xs text-gray-500 mb-1">New</div>
+            <div class="text-lg font-semibold text-green-600">WordPress</div>
+          </div>
+        </div>
+        <div class="mt-3 pt-3 border-t border-gray-200">
+          <p class="text-xs text-gray-600">WordPress gives you control. Wix locks you into their bloated infrastructure with no optimization options.</p>
+        </div>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-lg p-5">
+        <h3 class="text-sm font-semibold text-gray-600 uppercase mb-2">Est. load time</h3>
+        <div class="space-y-2">
+          <div>
+            <div class="text-xs text-gray-500 mb-1">Old</div>
+            <div class="text-2xl font-bold text-red-600">3-5s</div>
+            <div class="text-xs text-gray-500">Mobile (likely 20-40 PageSpeed)</div>
+          </div>
+          <div>
+            <div class="text-xs text-gray-500 mb-1">New (est.)</div>
+            <div class="text-2xl font-bold text-green-600">1-2s</div>
+            <div class="text-xs text-gray-500">Need Lighthouse to confirm</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-5">
+      <h3 class="font-semibold text-gray-900 mb-2">Why this matters</h3>
+      <p class="text-sm text-gray-700 mb-2">
+        <strong>40% of visitors abandon sites that take longer than 3 seconds to load.</strong> Every second of delay reduces conversions by 7%.
+      </p>
+      <p class="text-sm text-gray-700">
+        The old Wix site was bleeding leads. The new WordPress site should perform much better, but you need to run Lighthouse to get hard numbers.
+      </p>
+    </div>
+  </section>
+
+  <!-- Deep Dive: SEO -->
+  <section class="max-w-5xl mx-auto px-6 py-10 border-t border-gray-200">
+    <h2 class="text-xl font-bold text-gray-900 mb-6">SEO deep dive</h2>
+
+    <div class="space-y-6">
+      
+      <div class="bg-white border border-red-200 rounded-lg p-5">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="text-2xl">🚨</span>
+          <div>
+            <h3 class="font-semibold text-gray-900">Meta description still missing</h3>
+            <span class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded mt-1 inline-block">CRITICAL - NO CHANGE</span>
+          </div>
+        </div>
+        <p class="text-sm text-gray-700 mb-3">
+          This was flagged in the original audit (May 2026) as a critical issue. It's still not fixed.
+        </p>
+        <div class="bg-red-50 border border-red-200 rounded p-3 text-sm">
+          <p class="text-gray-700 mb-2"><strong>Impact:</strong></p>
+          <ul class="space-y-1 text-gray-600 text-xs ml-4 list-disc">
+            <li>Google writes its own snippet (often poorly)</li>
+            <li>Lower click-through rates from search results</li>
+            <li>Competitors with good descriptions steal your clicks</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-white border border-orange-200 rounded-lg p-5">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="text-2xl">⚠️</span>
+          <div>
+            <h3 class="font-semibold text-gray-900">Title tag needs work</h3>
+            <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded mt-1 inline-block">POOR</span>
+          </div>
+        </div>
+        <p class="text-sm text-gray-700 mb-3">
+          Current title: "SpinLGX" (7 chars). No keywords, no value prop. Original audit said titles were "generic"—this is worse.
+        </p>
+        <div class="bg-gray-50 border border-gray-200 rounded p-3 text-sm">
+          <p class="text-gray-600 mb-1"><strong>Should be:</strong></p>
+          <p class="text-gray-800 italic">"SpinLGX | Logistics Contract Optimization & Freight Audit Services"</p>
+          <p class="text-xs text-gray-500 mt-1">(62 chars, includes keywords, describes what you do)</p>
+        </div>
+      </div>
+
+      <div class="bg-white border border-green-200 rounded-lg p-5">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="text-2xl">✅</span>
+          <div>
+            <h3 class="font-semibold text-gray-900">H1 structure fixed</h3>
+            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded mt-1 inline-block">IMPROVED</span>
+          </div>
+        </div>
+        <p class="text-sm text-gray-700">
+          Now has exactly 1 H1 tag per page (correct). Old site likely had multiple H1s or used them incorrectly.
+        </p>
+      </div>
+
+      <div class="bg-white border border-green-200 rounded-lg p-5">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="text-2xl">✅</span>
+          <div>
+            <h3 class="font-semibold text-gray-900">Canonical URL added</h3>
+            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded mt-1 inline-block">NEW</span>
+          </div>
+        </div>
+        <p class="text-sm text-gray-700">
+          Points to https://spinlgx.com/. Helps prevent duplicate content issues. Good addition.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-5">
+      <h3 class="font-semibold text-gray-900 mb-2">Original audit finding (May 2026)</h3>
+      <blockquote class="text-sm text-gray-700 italic border-l-4 border-blue-400 pl-4">
+        "Missing meta descriptions, no blog content, zero schema markup. Competitors publish 2-4 articles/month and dominate search."<br>
+        <span class="text-xs text-gray-500 mt-1 block">— Original SEO score: 42/100 (Poor)</span>
+      </blockquote>
+      <p class="text-sm text-gray-700 mt-3">
+        <strong>Current status:</strong> SEO foundation is marginally better (~47/100 est.) due to H1/canonical fixes, but core issues (meta desc, schema, content) remain.
+      </p>
+    </div>
+  </section>
+
+  <!-- Deep Dive: Content -->
+  <section class="max-w-5xl mx-auto px-6 py-10 border-t border-gray-200">
+    <h2 class="text-xl font-bold text-gray-900 mb-6">Content deep dive</h2>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+      <div class="bg-white border border-gray-200 rounded-lg p-5">
+        <h3 class="text-sm font-semibold text-gray-600 uppercase mb-3">Old site (Wix)</h3>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-700">Blog posts</span>
+            <span class="font-semibold text-red-600">0</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-700">Content score</span>
+            <span class="font-semibold text-red-600">10/100</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-700">Homepage words</span>
+            <span class="font-semibold text-gray-500">Minimal</span>
+          </div>
+        </div>
+        <p class="text-xs text-gray-600 mt-3 pt-3 border-t border-gray-200">
+          Original audit: "Zero blog posts, no guides, no case studies. ICC Logistics has 40+ articles and dominates organic traffic."
+        </p>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-lg p-5">
+        <h3 class="text-sm font-semibold text-gray-600 uppercase mb-3">New site (WordPress)</h3>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-700">Blog posts</span>
+            <span class="font-semibold text-gray-500">Unknown</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-700">Content score (est.)</span>
+            <span class="font-semibold text-yellow-600">~43/100</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-700">Homepage words</span>
+            <span class="font-semibold text-green-600">~1,744</span>
+          </div>
+        </div>
+        <p class="text-xs text-gray-600 mt-3 pt-3 border-t border-gray-200">
+          More content is good, but needs to check if a blog exists. Also: 6 AI buzzwords detected in homepage copy.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-5">
+      <h3 class="font-semibold text-gray-900 mb-3">AI content concern</h3>
+      <p class="text-sm text-gray-700 mb-3">
+        Homepage copy contains 6 common AI-generated buzzwords:
+      </p>
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="text-xs bg-white border border-yellow-300 px-2 py-1 rounded">seamless (2×)</span>
+        <span class="text-xs bg-white border border-yellow-300 px-2 py-1 rounded">leverage</span>
+        <span class="text-xs bg-white border border-yellow-300 px-2 py-1 rounded">unlock</span>
+        <span class="text-xs bg-white border border-yellow-300 px-2 py-1 rounded">streamline</span>
+        <span class="text-xs bg-white border border-yellow-300 px-2 py-1 rounded">optimize</span>
+      </div>
+      <p class="text-sm text-gray-700">
+        These are telltale signs of AI-written copy that hasn't been humanized. Replace with specific client outcomes and real numbers.
+      </p>
+    </div>
+
+    <div class="mt-6 bg-red-50 border border-red-200 rounded-lg p-5">
+      <h3 class="font-semibold text-gray-900 mb-2">Still no content engine</h3>
+      <p class="text-sm text-gray-700">
+        The original audit gave content a 10/100 because there was no blog, no thought leadership, no case studies. 
+        WordPress makes it easy to add a blog—but if it's not there yet, you're still invisible during the buyer research phase.
+      </p>
+    </div>
+  </section>
+
+  <!-- What This Cost -->
+  <section class="max-w-5xl mx-auto px-6 py-10 border-t border-gray-200">
+    <h2 class="text-xl font-bold text-gray-900 mb-6">What should this have cost?</h2>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+      <div class="bg-white border border-gray-200 rounded-lg p-5">
+        <h3 class="text-sm font-semibold text-gray-600 uppercase mb-3">What they got</h3>
+        <ul class="text-sm text-gray-700 space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="text-green-600 font-bold">✓</span>
+            <span>Platform migration (Wix → WordPress)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-600 font-bold">✓</span>
+            <span>87% page weight reduction (662KB → 81KB)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-600 font-bold">✓</span>
+            <span>H1 structure fixed</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-600 font-bold">✓</span>
+            <span>Canonical URL added</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-600 font-bold">✓</span>
+            <span>~1,744 words of homepage content (AI-generated)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-600 font-bold">✓</span>
+            <span>Hero section + 44 CTAs</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-lg p-5">
+        <h3 class="text-sm font-semibold text-gray-600 uppercase mb-3">What they didn't get</h3>
+        <ul class="text-sm text-gray-700 space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="text-red-600 font-bold">✗</span>
+            <span>Meta description (still missing)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-600 font-bold">✗</span>
+            <span>Proper title tag (somehow worse)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-600 font-bold">✗</span>
+            <span>Open Graph tags (not added)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-600 font-bold">✗</span>
+            <span>Homepage contact form (missing)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-600 font-bold">✗</span>
+            <span>Humanized content (AI buzzwords everywhere)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-600 font-bold">✗</span>
+            <span>Blog/content engine (unknown if exists)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
+        <h3 class="font-semibold text-gray-900 mb-3">If this was done properly</h3>
+        <div class="text-3xl font-bold text-gray-900 mb-2">$8,000-$12,000</div>
+        <ul class="text-sm text-gray-700 space-y-1">
+          <li>• Platform migration: $3-5K</li>
+          <li>• Content rewrite (human-written): $2-3K</li>
+          <li>• Basic SEO setup: $1-2K</li>
+          <li>• Design/UX: $2-3K</li>
+        </ul>
+      </div>
+
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-5">
+        <h3 class="font-semibold text-gray-900 mb-3">What it looks like they actually got</h3>
+        <div class="text-3xl font-bold text-gray-900 mb-2">$3,000-$5,000</div>
+        <ul class="text-sm text-gray-700 space-y-1">
+          <li>• Someone used an AI content generator without editing</li>
+          <li>• WordPress setup is functional but basic</li>
+          <li>• Critical SEO elements weren't even addressed</li>
+          <li>• Feels rushed or checked off a list without quality control</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-lg p-5">
+        <h3 class="font-semibold text-gray-900 mb-3">What they should have paid (given the quality)</h3>
+        <div class="text-3xl font-bold text-red-600 mb-2">~$2,000</div>
+        <p class="text-sm text-gray-700">
+          The platform migration is real value—getting off Wix is good. But leaving the meta description broken (after it was flagged in the May audit), 
+          making the title tag <em>worse</em>, and shipping AI-generated content without humanizing it? That's incomplete work.
+        </p>
+        <p class="text-sm text-gray-700 mt-3">
+          This feels like "Phase 1" of a proper redesign that got shipped as if it was done.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Original Audit Context -->
+  <section class="max-w-5xl mx-auto px-6 py-10 border-t border-gray-200 bg-gray-50">
+    <h2 class="text-xl font-bold text-gray-900 mb-6">Original audit findings (May 2026)</h2>
+    
+    <div class="space-y-4">
+      <div class="bg-white border border-gray-200 rounded-lg p-5">
+        <h3 class="font-semibold text-gray-900 mb-2">Performance (35/100 - Critical)</h3>
+        <ul class="text-sm text-gray-700 space-y-1 ml-4 list-disc">
+          <li>Wix platform bloat: 662KB page size (400KB overhead)</li>
+          <li>Slow TTFB: 0.18s</li>
+          <li>No optimization control due to vendor lock-in</li>
+          <li>Mobile likely scores 20-40 on PageSpeed</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-lg p-5">
+        <h3 class="font-semibold text-gray-900 mb-2">SEO (42/100 - Poor)</h3>
+        <ul class="text-sm text-gray-700 space-y-1 ml-4 list-disc">
+          <li>Missing meta descriptions</li>
+          <li>No blog content</li>
+          <li>Zero schema markup</li>
+          <li>Competitors publish 2-4 articles/month and dominate search</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-lg p-5">
+        <h3 class="font-semibold text-gray-900 mb-2">Design/UX (38/100 - Poor)</h3>
+        <ul class="text-sm text-gray-700 space-y-1 ml-4 list-disc">
+          <li>Generic stock template</li>
+          <li>Wall of text homepage, no whitespace</li>
+          <li>Poor visual hierarchy</li>
+          <li>Dated typography</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-lg p-5">
+        <h3 class="font-semibold text-gray-900 mb-2">Content (10/100 - Non-existent)</h3>
+        <ul class="text-sm text-gray-700 space-y-1 ml-4 list-disc">
+          <li>Zero blog posts</li>
+          <li>No guides or case studies</li>
+          <li>ICC Logistics has 40+ articles and dominates organic traffic</li>
+          <li>B2B buyers conduct 70% of research online before contacting a vendor</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-5">
+      <h3 class="font-semibold text-gray-900 mb-2">Bottom line from May 2026 audit</h3>
+      <blockquote class="text-sm text-gray-700 italic">
+        "The site works, but it's not winning business. Competitors are outranking, outperforming, and out-educating Spin LGX with robust content strategies, faster sites, and stronger technical SEO."
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 bg-white py-8">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <p class="text-sm text-gray-600">Redesign comparison prepared June 9, 2026</p>
+      <p class="text-xs text-gray-500 mt-2">Original audit: May 5, 2026 | Based on public information and technical analysis</p>
+    </div>
+  </footer>
+
+</body>
+</html>
